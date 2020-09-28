@@ -10,7 +10,7 @@ on:
     branches: [ develop ]
 
 jobs:
-  react:
+  build:
 
     runs-on: ubuntu-latest
 
@@ -21,7 +21,7 @@ jobs:
 
     steps:
     - name: Git checkout
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
       
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
