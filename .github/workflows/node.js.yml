@@ -1,0 +1,57 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  react:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        # node-version: [10.x, 12.x, 14.x]
+        node-version: [10.x]
+
+    steps:
+    - name: Git checkout
+    - uses: actions/checkout@v2
+      
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Cache yarn modules
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: v1-yarn-deps-${{ hashFiles('yarn.lock') }}
+        restore-keys: v1-yarn-deps-
+
+    - name: Cache react modules
+      uses: actions/cache@v2
+      with:
+        path: packages/react/node_modules
+        key: v1-react-deps-${{ hashFiles('packages/react/yarn.lock') }}
+        restore-keys: v1-react-deps-
+
+    - name: Cache styles modules
+      uses: actions/cache@v2
+      with:
+        path: packages/styles/node_modules
+        key: v1-styles-deps-${{ hashFiles('packages/styles/yarn.lock') }}
+        restore-keys: v1-styles-deps-
+        
+    - run: yarn
+    - run: npx lerna bootstrap
+    - run: NODE_ENV=production yarn --cwd=packages/styles build
+    - run: NODE_ENV=production yarn --cwd=packages/react build
+    - run: yarn --cwd=packages/react test
+
