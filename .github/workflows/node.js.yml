@@ -10,7 +10,7 @@ on:
     branches: [ develop ]
 
 jobs:
-  react:
+  build:
 
     runs-on: ubuntu-latest
 
