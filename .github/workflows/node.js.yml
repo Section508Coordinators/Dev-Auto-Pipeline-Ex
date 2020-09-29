@@ -54,4 +54,5 @@ jobs:
     - run: NODE_ENV=production yarn --cwd=packages/styles build
     - run: NODE_ENV=production yarn --cwd=packages/react build
     - run: yarn --cwd=packages/react test
+    - run: yarn dev & && sleep 15 && yarn test-pa11y
 
