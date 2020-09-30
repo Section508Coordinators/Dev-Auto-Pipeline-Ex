@@ -31,7 +31,10 @@ jobs:
     - name: Cache yarn modules
       uses: actions/cache@v2
       with:
-        path: ~/.npm
+        path: |
+          ~/.npm
+          ~/.cache/yarn
+          node_modules
         key: v1-yarn-deps-${{ hashFiles('yarn.lock') }}
         restore-keys: v1-yarn-deps-
 
