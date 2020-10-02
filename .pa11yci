@@ -1,6 +1,7 @@
 {
   "defaults": {
-    "timeout": 10000
+    "timeout": 20000,
+    "threshold": 0
   },
   "urls": [
           "http://localhost:8000/components/Button",

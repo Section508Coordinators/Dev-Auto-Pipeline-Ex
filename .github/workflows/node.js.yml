@@ -57,8 +57,9 @@ jobs:
     - run: NODE_ENV=production yarn --cwd=packages/styles build
     - run: NODE_ENV=production yarn --cwd=packages/react build
     - run: yarn --cwd=packages/react test
-    # - run: yarn dev &
-    # - run: sleep 20 && yarn test-pa11y
+    - run: yarn dev &
+    - run: sleep 20 && yarn test-pa11y
+    - run: yarn generate-pa11y-report
     - run: yarn build
 
     - name: Upload Website
