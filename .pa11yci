@@ -6,10 +6,7 @@
   "urls": [
           "http://localhost:8000/components/Button",
           "http://localhost:8000/components/Pointout",
-          // { I think the actions per url would be structured like this
-          //   "url": "http://localhost:8000/components/Alert",
-          //   "actions": []
-          // }
+          "http://localhost:8000/components/Alert",
           "http://localhost:8000/components/Modal",
           "http://localhost:8000/components/TopBarMenu",
           "http://localhost:8000/components/Toast",
