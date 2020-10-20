@@ -1,28 +1,31 @@
 {
   "defaults": {
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox"]
+    },
     "timeout": 20000,
     "threshold": 0
   },
   "urls": [
-          "http://localhost:8000/components/Button",
-          "http://localhost:8000/components/Pointout",
-          "http://localhost:8000/components/Alert",
-          "http://localhost:8000/components/Modal",
-          "http://localhost:8000/components/TopBarMenu",
-          "http://localhost:8000/components/Toast",
-          "http://localhost:8000/components/Loader",
-          "http://localhost:8000/components/Layout",
-          "http://localhost:8000/components/OptionsMenu",
-          "http://localhost:8000/components/Select",
-          "http://localhost:8000/components/RadioGroup",
-          "http://localhost:8000/components/Checkbox",
-          "http://localhost:8000/components/ClickOutsideListener",
-          "http://localhost:8000/components/Tooltip",
-          "http://localhost:8000/components/Card",
-          "http://localhost:8000/components/ExpandCollapsePanel",
-          "http://localhost:8000/components/TextField",
-          "http://localhost:8000/components/Link",
-          "http://localhost:8000/components/Icon",
-          "http://localhost:8000/components/Cod"
+    "http://localhost:8000/components/Button",
+    "http://localhost:8000/components/Pointout",
+    "http://localhost:8000/components/Alert",
+    "http://localhost:8000/components/Modal",
+    "http://localhost:8000/components/TopBarMenu",
+    "http://localhost:8000/components/Toast",
+    "http://localhost:8000/components/Loader",
+    "http://localhost:8000/components/Layout",
+    "http://localhost:8000/components/OptionsMenu",
+    "http://localhost:8000/components/Select",
+    "http://localhost:8000/components/RadioGroup",
+    "http://localhost:8000/components/Checkbox",
+    "http://localhost:8000/components/ClickOutsideListener",
+    "http://localhost:8000/components/Tooltip",
+    "http://localhost:8000/components/Card",
+    "http://localhost:8000/components/ExpandCollapsePanel",
+    "http://localhost:8000/components/TextField",
+    "http://localhost:8000/components/Link",
+    "http://localhost:8000/components/Icon",
+    "http://localhost:8000/components/Cod"
   ]
 }
