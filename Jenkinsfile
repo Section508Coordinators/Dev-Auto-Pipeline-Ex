@@ -11,8 +11,8 @@ pipeline {
   stages {
     stage('Deps') {
       steps {
-        sh 'npm install --global yarn'
-        sh 'yarn'
+        sh 'npm install yarn'
+        sh './node_modules/.bin/yarn'
         sh 'npx lerna bootstrap'
       }
     }
