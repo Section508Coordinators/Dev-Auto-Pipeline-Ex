@@ -1,8 +1,8 @@
 pipeline {
   agent {
     docker {
-      image 'node:14-buster'
-      args '-p 3010:3010'
+      image 'buildkite/puppeteer:5.2.1'
+      // args '-p 3010:3010'
     }
   }
   environment {
@@ -11,8 +11,8 @@ pipeline {
   stages {
     stage('Deps') {
       steps {
-        sh 'npm install yarn'
-        sh './node_modules/.bin/yarn'
+        // sh 'npm install yarn'
+        // sh './node_modules/.bin/yarn'
         sh 'npx lerna bootstrap'
       }
     }
@@ -30,7 +30,7 @@ pipeline {
     stage('Test A11y') {
       steps {
         sh 'yarn dev &'
-        sh 'sleep 20 && yarn test-pa11y'
+        sh 'wait-for-it.sh --timeout=30 localhost:8000 && yarn test-pa11y'
         sh 'yarn generate-pa11y-report'
 
       }
