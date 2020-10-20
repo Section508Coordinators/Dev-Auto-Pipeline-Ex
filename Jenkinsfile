@@ -13,6 +13,7 @@ pipeline {
       steps {
         // sh 'npm install yarn'
         // sh './node_modules/.bin/yarn'
+        sh 'yarn'
         sh 'npx lerna bootstrap'
       }
     }
