@@ -5,7 +5,9 @@ pipeline {
       args '-p 3010:3010'
     }
   }
-
+  environment {
+    HOME = '.'
+  }
   stages {
     stage('Deps') {
       steps {
@@ -32,10 +34,10 @@ pipeline {
         sh 'yarn generate-pa11y-report'
       }
     }
-		stage('Build All') {
-		  steps {
-			  sh 'yarn build'
-			}
-		}
+    stage('Build All') {
+      steps {
+        sh 'yarn build'
+      }
+    }
   }
 }
