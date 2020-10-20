@@ -32,6 +32,7 @@ pipeline {
         sh 'yarn dev &'
         sh 'sleep 20 && yarn test-pa11y'
         sh 'yarn generate-pa11y-report'
+
       }
     }
     stage('Build All') {
