@@ -30,7 +30,7 @@ pipeline {
     stage('Test A11y') {
       steps {
         sh 'yarn dev &'
-        sh 'sleep 20 && yarn test-a11y'
+        sh 'sleep 20 && yarn test-pa11y'
         sh 'yarn generate-pa11y-report'
       }
     }
