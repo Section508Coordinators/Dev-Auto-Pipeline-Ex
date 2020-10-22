@@ -6,11 +6,11 @@
     "timeout": 20000,
     "threshold": 0
   },
-  runners: [
+  "runners": [
     // 'axe',
     'htmlcs'
   ],
-	ignore: [
+	"ignore": [
 		//// following axe rules do not currently align with ICT/TTv5
 		// 'accesskeys',
 		// 'area-alt',
@@ -97,8 +97,8 @@
 		"http://localhost:8000/",
 		"http://localhost:8000/components/Alert",
 		{
-      url: "http://localhost:8000/components/Alert",
-      actions: [
+      "url": "http://localhost:8000/components/Alert",
+      "actions": [
         'click element button[type=button]',
 				'wait for element div["Alert Dialog--show"] to be visible'
       ]
