@@ -7,7 +7,7 @@
     "threshold": 0
   },
   "runners": [
-    'htmlcs'
+    "htmlcs"
   ],
 	"ignore": [
 		'WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.Center',
@@ -61,6 +61,6 @@
     "http://localhost:8000/components/TextField",
     "http://localhost:8000/components/Toast",
     "http://localhost:8000/components/Tooltip",
-    "http://localhost:8000/components/TopBarMenu",
+    "http://localhost:8000/components/TopBarMenu"
   ]
 }
