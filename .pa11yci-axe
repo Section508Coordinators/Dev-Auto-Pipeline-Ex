@@ -81,7 +81,7 @@
     "http://localhost:8000/components/Card",
     "http://localhost:8000/components/Checkbox",
     "http://localhost:8000/components/ClickOutsideListener",
-    "http://localhost:8000/components/Code"
+    "http://localhost:8000/components/Code",
     "http://localhost:8000/components/ExpandCollapsePanel",
     "http://localhost:8000/components/Icon",
     "http://localhost:8000/components/Layout",
