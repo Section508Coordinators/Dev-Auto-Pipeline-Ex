@@ -91,7 +91,7 @@
     "fmt": "prettier --write 'docs/**/*.{css,js}' 'packages/react/**/*.{js,ts,tsx}' *.{js,json,md,ts}",
     "lint": "eslint .",
     "test": "npm run --prefix=packages/react test",
-    "test-pa11y": "echo $(mkdir -p dist && ./node_modules/.bin/pa11y-ci --json > dist/pa11y-results.json)",
+    "test-pa11y": "echo $(mkdir -p dist && ./node_modules/.bin/pa11y-ci -c .pa11yci-axe --json > dist/pa11y-results.json)",
     "generate-pa11y-report": "mkdir -p docs/dist/pa11y && rm -f docs/dist/pa11y/* && ./node_modules/.bin/pa11y-ci-reporter-html -s dist/pa11y-results.json -d docs/dist/pa11y",
     "postinstall": "lerna bootstrap"
   }
