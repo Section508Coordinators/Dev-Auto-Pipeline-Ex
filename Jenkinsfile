@@ -3,7 +3,9 @@ pipeline {
     docker {
       image 'buildkite/puppeteer:5.2.1'
       // args '-p 3010:3010'
-      args '-v $HOME/.npm:$HOME/.cache/yarn:$HOME/node_modules'
+      // following doesn't work and needs serious adjustments
+      // need to figure out a better caching strategy
+      // args '-v /srv/puppeteer/.npm:/.npm'
     }
   }
   environment {
