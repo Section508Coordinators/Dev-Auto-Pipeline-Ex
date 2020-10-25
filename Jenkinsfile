@@ -49,8 +49,10 @@ pipeline {
       }
     }
     stage('Publish to S3') {
-      withAWS(credentials:'jenkins-temp-oast-ci-cd-examples-task1-cauldron-s3') {
-        s3Upload(file:'docs/dist', bucket:'arn:aws:s3:::temp-oast-ci-cd-examples-task1-cauldron')
+      steps {
+        withAWS(credentials:'jenkins-temp-oast-ci-cd-examples-task1-cauldron-s3') {
+          s3Upload(file:'docs/dist', bucket:'arn:aws:s3:::temp-oast-ci-cd-examples-task1-cauldron')
+        }
       }
     }
   }
