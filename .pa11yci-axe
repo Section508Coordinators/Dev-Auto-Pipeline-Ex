@@ -74,7 +74,7 @@
       "url": "http://localhost:8000/components/Alert",
       "actions": [
         "click element button[type=button]",
-        "wait for element div['Alert Dialog--show'] to be visible"
+        "wait for element div[class='Alert Dialog--show'] to be visible"
       ]
     },
     "http://localhost:8000/components/Button",
