@@ -52,7 +52,7 @@ pipeline {
     stage('Publish to S3') {
       steps {
         withAWS(credentials:'jenkins-temp-oast-ci-cd-examples-task1-cauldron-s3', region: "us-east-1") {
-          s3Upload(file:'docs/dist', bucket:'temp-oast-ci-cd-examples-task1-cauldron')
+          s3Upload(file:'docs/dist', bucket:'temp-oast-ci-cd-examples-task1-cauldron', acl:'PublicRead')
         }
       }
     }
