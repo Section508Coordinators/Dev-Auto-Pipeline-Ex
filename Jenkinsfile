@@ -35,14 +35,23 @@ pipeline {
         sh 'yarn --cwd=packages/react test'
       }
     }
-    stage('Test A11y') {
+    stage('Test A11y (axe)') {
       steps {
         sh 'yarn dev &'
-        sh 'wait-for-it.sh --timeout=30 localhost:8000 && yarn test-pa11y'
-        sh 'yarn generate-pa11y-report'
+        sh 'wait-for-it.sh --timeout=30 localhost:8000 && yarn test-pa11y-axe'
+        sh 'yarn generate-pa11y-axe-report'
 
       }
     }
+    stage('Test A11y (htmlcs)') {
+      steps {
+        sh 'yarn dev &'
+        sh 'wait-for-it.sh --timeout=30 localhost:8000 && yarn test-pa11y-htmlcs'
+        sh 'yarn generate-pa11y-htmlcs-report'
+
+      }
+    }
+
     stage('Build All') {
       steps {
         sh 'yarn build'
