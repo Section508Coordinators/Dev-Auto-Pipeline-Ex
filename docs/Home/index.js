@@ -5,6 +5,7 @@ const Home = () => (
   <div>
     <h1>Cauldron React</h1>
     <h2>Installation</h2>
+		<h2>Hello there!</h2>
     <Code language="shell">
       {'$ npm install --save @deque/cauldron-react @deque/cauldron-styles'}
     </Code>
