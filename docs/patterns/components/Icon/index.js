@@ -23,7 +23,25 @@ export default class IconDemo extends Component {
               type: 'arrow-down'
             },
             {
+              type: 'arrow-circle-left'
+            },
+            {
+              type: 'arrow-circle-right'
+            },
+            {
+              type: 'arrow-circle-up'
+            },
+            {
+              type: 'arrow-circle-down'
+            },
+            {
               type: 'bolt'
+            },
+            {
+              type: 'caution'
+            },
+            {
+              type: 'check-circle'
             },
             {
               type: 'checkbox-checked'
@@ -83,13 +101,25 @@ export default class IconDemo extends Component {
               type: 'info-circle'
             },
             {
+              type: 'info-circle-alt'
+            },
+            {
               type: 'kabob'
             },
             {
               type: 'list'
             },
             {
+              type: 'lock'
+            },
+            {
               type: 'menu'
+            },
+            {
+              type: 'no'
+            },
+            {
+              type: 'pencil'
             },
             {
               type: 'plus'
@@ -105,6 +135,9 @@ export default class IconDemo extends Component {
             },
             {
               type: 'run-again'
+            },
+            {
+              type: 'save'
             },
             {
               type: 'star'

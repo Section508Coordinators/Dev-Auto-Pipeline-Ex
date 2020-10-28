@@ -39,9 +39,16 @@
 
   /* buttons */
   --button-background-color-primary: #3c7aae;
+  --button-background-color-primary-disabled: #79a7d9;
+  --button-background-color-primary-active: #316091;
   --button-background-color-secondary: #f2f2f2;
-  --button-text-color-dark: #5a6268;
+  --button-background-color-secondary-disabled: #e0e0e0;
+  --button-background-color-secondary-active: #e0e0e0;
+  --button-background-color-error-disabled: #db6379;
+  --button-background-color-error-active: #c92e40;
+  --button-text-color-dark: #333333;
   --button-text-color-light: #ffffff;
+  --button-focus-ring-color: #c11bde;
 
   /* tooltips */
   --tooltip-border-color: #999999;
@@ -53,6 +60,10 @@
   --error: #d93251;
   --disabled: #cccccc;
   --focus: #d71ef7;
+  --warning: #ffe69f;
+  --error-alt: #ffa1a1;
+  --info: #83e4fa;
+  --success: #d1ffa4;
   --focus-active: rgba(215, 30, 247, 0.25);
   --focus-glow: rgba(193, 27, 222, 0.75);
   --metric-accent-low: #f7846c;
@@ -111,8 +122,8 @@
   /* z-index */
   --z-index-tooltip: 9;
   --z-index-scrim: 7;
-  --z-index-modal: 21;
-  --z-index-modal-scrim: 20;
+  --z-index-dialog: 21;
+  --z-index-dialog-scrim: 20;
   --z-index-scrim-action-needed: 23;
   --z-index-side-bar: 9;
   --z-index-toast: 8;
