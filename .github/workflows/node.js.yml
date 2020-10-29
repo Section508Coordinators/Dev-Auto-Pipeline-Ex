@@ -52,17 +52,28 @@ jobs:
         key: v1-styles-deps-${{ hashFiles('packages/styles/yarn.lock') }}
         restore-keys: v1-styles-deps-
 
-    - run: yarn
-    - run: npx lerna bootstrap
-    - run: NODE_ENV=production yarn --cwd=packages/styles build
-    - run: NODE_ENV=production yarn --cwd=packages/react build
-    - run: yarn --cwd=packages/react test
-    - run: yarn dev &
-    - run: sleep 20 && yarn test-pa11y-axe
-    - run: yarn test-pa11y-htmlcs
-    - run: yarn generate-pa11y-axe-report
-    - run: yarn generate-pa11y-htmlcs-report
-    - run: yarn build
+    - name: build projects
+      run: yarn
+      run: npx lerna bootstrap
+      run: NODE_ENV=production yarn --cwd=packages/styles build
+      run: NODE_ENV=production yarn --cwd=packages/react build
+
+    - name: run unit tests
+      run: yarn --cwd=packages/react test
+
+    # Continue on error needed because pa11y-ci can exit with error
+    # codes for many different reasons. Ultimately, we want to see the
+    # final report.
+    - name: integration A11y tests
+      continue-on-error: true
+      run: yarn dev &
+      run: sleep 20 && yarn test-pa11y-axe
+      run: yarn test-pa11y-htmlcs
+      run: yarn generate-pa11y-axe-report
+      run: yarn generate-pa11y-htmlcs-report
+
+    - name: top level build before upload
+      - run: yarn build
 
     - name: Upload Website
       uses: jakejarvis/s3-sync-action@master
