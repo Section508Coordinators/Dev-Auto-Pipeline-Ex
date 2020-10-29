@@ -91,7 +91,7 @@
     "fmt": "prettier --write 'docs/**/*.{css,js}' 'packages/react/**/*.{js,ts,tsx}' *.{js,json,md,ts}",
     "lint": "eslint .",
     "test": "npm run --prefix=packages/react test",
-    "test-pa11y-axe": "bash -c 'mkdir -p docs/dist && ./node_modules/.bin/pa11y-ci -c .pa11yci-axe --json > docs/dist/pa11y-results-axe.json'",
+    "test-pa11y-axe": "bash -c 'mkdir -p docs/dist && ./node_modules/.bin/pa11y-ci -c .pa11yci-axe'",
     "generate-pa11y-axe-report": "bash -c 'mkdir -p docs/dist/pa11y-axe && ./node_modules/.bin/pa11y-ci-reporter-html -s docs/dist/pa11y-results-axe.json -d docs/dist/pa11y-axe'",
     "test-pa11y-htmlcs": "bash -c 'mkdir -p docs/dist && ./node_modules/.bin/pa11y-ci -c .pa11yci-htmlcs --json > docs/dist/pa11y-results-htmlcs.json'",
     "generate-pa11y-htmlcs-report": "bash -c 'mkdir -p docs/dist/pa11y-htmlcs  && ./node_modules/.bin/pa11y-ci-reporter-html -s docs/dist/pa11y-results-axe.json -d docs/dist/pa11y-htmlcs'",
