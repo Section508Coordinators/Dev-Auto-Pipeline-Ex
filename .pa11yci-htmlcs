@@ -4,7 +4,7 @@
       "args": ["--no-sandbox"]
     },
     "timeout": 20000,
-    "threshold": 0
+    "threshold": 100
   },
   "runners": [
     "htmlcs"
