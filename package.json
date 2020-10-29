@@ -86,15 +86,15 @@
     ]
   },
   "scripts": {
-    "build": "NODE_ENV=production lerna run build && NODE_ENV=production webpack --bail",
-    "dev": "lerna run dev --stream & webpack-dev-server",
+    "build": "bash -c 'NODE_ENV=production lerna run build' && bash -c 'NODE_ENV=production webpack --bail'",
+    "dev": "bash -c 'yarn webpack-dev-server & lerna run dev --stream'",
     "fmt": "prettier --write 'docs/**/*.{css,js}' 'packages/react/**/*.{js,ts,tsx}' *.{js,json,md,ts}",
     "lint": "eslint .",
     "test": "npm run --prefix=packages/react test",
-    "test-pa11y-axe": "echo $(mkdir -p docs/dist && ./node_modules/.bin/pa11y-ci -c .pa11yci-axe --json > docs/dist/pa11y-results-axe.json)",
-    "generate-pa11y-axe-report": "mkdir -p docs/dist/pa11y-axe && ./node_modules/.bin/pa11y-ci-reporter-html -s docs/dist/pa11y-results-axe.json -d docs/dist/pa11y-axe",
-    "test-pa11y-htmlcs": "echo $(mkdir -p docs/dist && ./node_modules/.bin/pa11y-ci -c .pa11yci-htmlcs --json > docs/dist/pa11y-results-htmlcs.json)",
-    "generate-pa11y-htmlcs-report": "mkdir -p docs/dist/pa11y-htmlcs  && ./node_modules/.bin/pa11y-ci-reporter-html -s docs/dist/pa11y-results-axe.json -d docs/dist/pa11y-htmlcs",
+    "test-pa11y-axe": "bash -c 'mkdir -p docs/dist && ./node_modules/.bin/pa11y-ci -c .pa11yci-axe --json > docs/dist/pa11y-results-axe.json",
+    "generate-pa11y-axe-report": "bash -c 'mkdir -p docs/dist/pa11y-axe && ./node_modules/.bin/pa11y-ci-reporter-html -s docs/dist/pa11y-results-axe.json -d docs/dist/pa11y-axe'",
+    "test-pa11y-htmlcs": "bash -c 'mkdir -p docs/dist && ./node_modules/.bin/pa11y-ci -c .pa11yci-htmlcs --json > docs/dist/pa11y-results-htmlcs.json'",
+    "generate-pa11y-htmlcs-report": "bash -c 'mkdir -p docs/dist/pa11y-htmlcs  && ./node_modules/.bin/pa11y-ci-reporter-html -s docs/dist/pa11y-results-axe.json -d docs/dist/pa11y-htmlcs'",
     "postinstall": "lerna bootstrap"
   }
 }

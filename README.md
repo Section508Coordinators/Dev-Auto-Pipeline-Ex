@@ -11,7 +11,7 @@ It also contains the documentation / demo app (see `docs/`)
 
 # Note - this is not the official Cauldron repository
 
-The official repository can be found [here](https://github.com/dequelabs/cauldron "Official repository link")
+The official repository can be found [here](https://github.com/dequelabs/cauldron 'Official repository link')
 
 # development/testing locally
 
@@ -20,6 +20,7 @@ not the official repository. The goal with these instructions is to
 give developers as many options as possible for building the code.
 
 ## building the code on windows
+
 ### starting with git windows command line tools
 
 - Install GIT Windows tools from https://git-scm.com/downloads
@@ -30,10 +31,12 @@ give developers as many options as possible for building the code.
 - Select the default options, but at the end choose to have it
   automatically handle compiling native dependencies by installing chocolatey
 - Run an elevated Windows powershell (run as administrator)
-- run 'choco install yarn'
 - Accept the defaults
-- Start a new git-bash shell (close the old one if it's still open)
+- Start a new git-bash shell (close the old one if it's still open) and navigate to the top level of the project
+- Run 'npm install --global yarn'
 - Run 'npm install --global lerna'
+- Run 'npm install --globaly typescript'
+- Run 'npm' in the top level project directory
 - In the new git-bash shell, cd to the cauldron checkout and run 'NODE_ENV=production yarn --cwd=packages/react build'
 - Another good command to run is 'yarn --cwd=packages/react test'
 - 'npx lerna bootstrap'

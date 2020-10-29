@@ -16,7 +16,7 @@
   "style": "dist/index.css",
   "scripts": {
     "build": "postcss index.css --dir ./dist",
-    "dev": "npm run build -- --watch",
-    "prepublishOnly": "NODE_ENV=production yarn build"
+    "dev": "npm run build -- --watch &",
+    "prepublishOnly": "bash -c 'NODE_ENV=production yarn build'"
   }
 }
