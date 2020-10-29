@@ -9,38 +9,38 @@
   "runners": [
     "htmlcs"
   ],
-	"ignore": [
-		"WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.Center",
-		"WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr",
-		"WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-		"WCAG2AA.Principle1.Guideline1_3.1_3_1.H44.NotFormControl",
-		"WCAG2AA.Principle1.Guideline1_3.1_3_1.H71.3",
-		"WCAG2AA.Principle1.Guideline1_3.1_3_1.H71.2",
-		"WCAG2AA.Principle1.Guideline1_3.1_3_1.H43.HeadersRequired",
-		"WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
-		"WCAG2AA.Principle3.Guideline3_1.3_1_1.H57.3.XmlLang",
-		"WCAG2AA.Principle1.Guideline1_3.1_3_1.H43.HeadersRequired",
-		"WCAG2AA.Principle1.Guideline1_1.1_1_1.H36",
-		"WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Fieldset.Name",
-		"WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.1",
-		"WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputImage.Name",
-		"WCAG2AA.Principle1.Guideline1_1.1_1_1.H2.EG5",
-		"WCAG2AA.Principle1.Guideline1_1.1_1_1.H2.EG4",
-		"WCAG2AA.Principle1.Guideline1_1.1_1_1.H53ARIA6",
-		"WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
-		"WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent",
-		"WCAG2AA.Principle2.Guideline2_4.2_4_1.G1G123G124.NoSuchID",
-		"WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2",
-		"WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1"
-	],
+  "ignore": [
+    "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.Center",
+    "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr",
+    "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
+    "WCAG2AA.Principle1.Guideline1_3.1_3_1.H44.NotFormControl",
+    "WCAG2AA.Principle1.Guideline1_3.1_3_1.H71.3",
+    "WCAG2AA.Principle1.Guideline1_3.1_3_1.H71.2",
+    "WCAG2AA.Principle1.Guideline1_3.1_3_1.H43.HeadersRequired",
+    "WCAG2AA.Principle1.Guideline1_1.1_1_1.H30.2",
+    "WCAG2AA.Principle3.Guideline3_1.3_1_1.H57.3.XmlLang",
+    "WCAG2AA.Principle1.Guideline1_3.1_3_1.H43.HeadersRequired",
+    "WCAG2AA.Principle1.Guideline1_1.1_1_1.H36",
+    "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Fieldset.Name",
+    "WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.1",
+    "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputImage.Name",
+    "WCAG2AA.Principle1.Guideline1_1.1_1_1.H2.EG5",
+    "WCAG2AA.Principle1.Guideline1_1.1_1_1.H2.EG4",
+    "WCAG2AA.Principle1.Guideline1_1.1_1_1.H53ARIA6",
+    "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+    "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent",
+    "WCAG2AA.Principle2.Guideline2_4.2_4_1.G1G123G124.NoSuchID",
+    "WCAG2AA.Principle1.Guideline1_3.1_3_1.H42.2",
+    "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1"
+  ],
   "urls": [
-		"http://localhost:8000/",
-		"http://localhost:8000/components/Alert",
-		{
+    "http://localhost:8000/",
+    "http://localhost:8000/components/Alert",
+    {
       "url": "http://localhost:8000/components/Alert",
       "actions": [
         "click element button[type=button]",
-				"wait for element div['Alert Dialog--show'] to be visible"
+        "wait for element div.Dialog--show to be visible"
       ]
     },
     "http://localhost:8000/components/Button",
