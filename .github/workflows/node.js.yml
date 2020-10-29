@@ -52,36 +52,21 @@ jobs:
         key: v1-styles-deps-${{ hashFiles('packages/styles/yarn.lock') }}
         restore-keys: v1-styles-deps-
 
-    - name: build projects
-      env:
-        NODE_ENV: production
-      run:
-        - yarn
-        - npx lerna bootstrap
-        - yarn --cwd=packages/styles build
-        - yarn --cwd=packages/react build
-
-    - name: run unit tests
-      run:
-        - yarn --cwd=packages/react test
-
-    # Continue on error needed because pa11y-ci can exit with error
-    # codes for many different reasons. Ultimately, we want to see the
-    # final report.
-    - name: integration A11y tests
+    - run: yarn
+    - run: npx lerna bootstrap
+    - run: NODE_ENV=production yarn --cwd=packages/styles build
+    - run: NODE_ENV=production yarn --cwd=packages/react build
+    - run: yarn --cwd=packages/react test
+    - run: yarn dev &
+    - run: sleep 20 && yarn test-pa11y-axe
       continue-on-error: true
-      run:
-        - yarn dev &
-        - sleep 20 && yarn test-pa11y-axe
-        - yarn test-pa11y-htmlcs
-        - yarn generate-pa11y-axe-report
-        - yarn generate-pa11y-htmlcs-report
-
-    - name: top level build before upload
-      env:
-        NODE_ENV: production
-      run:
-        - yarn build
+    - run: yarn test-pa11y-htmlcs
+      continue-on-error: true
+    - run: yarn generate-pa11y-axe-report
+      continue-on-error: true
+    - run: yarn generate-pa11y-htmlcs-report
+      continue-on-error: true
+    - run: yarn build
 
     - name: Upload Website
       uses: jakejarvis/s3-sync-action@master
