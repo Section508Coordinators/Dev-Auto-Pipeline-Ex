@@ -13,6 +13,15 @@ It also contains the documentation / demo app (see `docs/`)
 
 The official repository can be found [here](https://github.com/dequelabs/cauldron 'Official repository link')
 
+# Current repository deploy locations
+
+Automated builds via Github Actions and Jenkins are deploying the site to http://temp-oast-ci-cd-examples-task1-cauldron.s3-website-us-east-1.amazonaws.com/
+
+Accessibility reports (one via the Axe-core backend and one with the HtmlCodesniffer backend) can be found at the following urls
+
+- http://temp-oast-ci-cd-examples-task1-cauldron.s3-website-us-east-1.amazonaws.com/pa11y-axe/
+- http://temp-oast-ci-cd-examples-task1-cauldron.s3-website-us-east-1.amazonaws.com/pa11y-htmlcs
+
 # development/testing locally
 
 The following instructions are relevant for the current repository and
