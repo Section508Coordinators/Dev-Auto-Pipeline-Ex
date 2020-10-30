@@ -41,7 +41,7 @@ give developers as many options as possible for building the code.
 - Another good command to run is 'yarn --cwd=packages/react test'
 - 'npx lerna bootstrap'
 - 'NODE_ENV=production yarn --cwd=packages/styles build'
-  = 'npm install'
+- 'npm install'
 - 'yarn dev'
 - navigate to localhost:8000 and you should see the cauldron site
 - in a different git bash window, navigate to the top level of the source directory
