@@ -47,6 +47,11 @@ give developers as many options as possible for building the code.
 - in a different git bash window, navigate to the top level of the source directory
 - see if pa11y is able to validate the site by running './node_modules/.bin/pa11y-ci -c ./.pa11yci-htmlcs'
 - see if pa11y is able to validate the site via axe by running './node_modules/.bin/pa11y-ci -c ./.pa11yci-axe'
+- run the pa11y axe tests via yarn 'yarn test-pa11y-axe'
+- run the pa11y tests via yarn 'yarn test-pa11y-htmlcs'
+- generate the html axe report via 'yarn generate-pa11y-axe-report'
+- generate the html htmlcs report via 'yarn generate-pa11y-htmlcs-report
+- navigate in explorer to docs/dist and you'll see the subdirectories with the respective reports
 
 ### VSCode + Docker Desktop
 
