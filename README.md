@@ -35,7 +35,7 @@ give developers as many options as possible for building the code.
 - Install GIT Windows tools from https://git-scm.com/downloads
 - Download and run the installer
 - Accept all of the defaults and continue with installation
-- Open the git bash shell and clone the repo https://github.com/dequelabs/cauldron.git
+- Open the git bash shell and clone the repo https://github.com/jessesaga/Temp-OAST-CI-CD-Examples-Task1-Cauldron
 - Install the NodeJS tools for Windows from https://nodejs.org/en/download/
 - Select the default options, but at the end choose to have it
   automatically handle compiling native dependencies by installing chocolatey
