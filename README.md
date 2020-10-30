@@ -45,7 +45,6 @@ give developers as many options as possible for building the code.
 - Run 'npm install --global yarn'
 - Run 'npm install --global lerna'
 - Run 'npm install --global typescript'
-- Run 'npm' in the top level project directory
 - In the new git-bash shell, cd to the cauldron checkout and run 'NODE_ENV=production yarn --cwd=packages/react build'
 - Another good command to run is 'yarn --cwd=packages/react test'
 - 'npx lerna bootstrap'
