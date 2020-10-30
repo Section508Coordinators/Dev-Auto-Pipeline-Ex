@@ -35,14 +35,18 @@ give developers as many options as possible for building the code.
 - Start a new git-bash shell (close the old one if it's still open) and navigate to the top level of the project
 - Run 'npm install --global yarn'
 - Run 'npm install --global lerna'
-- Run 'npm install --globaly typescript'
+- Run 'npm install --global typescript'
 - Run 'npm' in the top level project directory
 - In the new git-bash shell, cd to the cauldron checkout and run 'NODE_ENV=production yarn --cwd=packages/react build'
 - Another good command to run is 'yarn --cwd=packages/react test'
 - 'npx lerna bootstrap'
 - 'NODE_ENV=production yarn --cwd=packages/styles build'
+  = 'npm install'
 - 'yarn dev'
 - navigate to localhost:8000 and you should see the cauldron site
+- in a different git bash window, navigate to the top level of the source directory
+- see if pa11y is able to validate the site by running './node_modules/.bin/pa11y-ci -c ./.pa11yci-htmlcs'
+- see if pa11y is able to validate the site via axe by running './node_modules/.bin/pa11y-ci -c ./.pa11yci-axe'
 
 ### VSCode + Docker Desktop
 
