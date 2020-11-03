@@ -85,4 +85,25 @@ give developers as many options as possible for building the code.
 - 'ls' should list your project home directory files
 - follow the previously mentioned build steps to build and run the code
 
-## building the code on Linux (coming soon maybe...)
+## building the code on Linux
+- Install git tools from your Linux package manager
+- Install node related tooling from your linux package manager (node, yarn, lerna, typescript) if available
+- Open a terminal clone the repo `git clone https://github.com/jessesaga/Temp-OAST-CI-CD-Examples-Task1-Cauldron`
+- Run 'npm install --global yarn'
+- Run 'npm install --global lerna'
+- Run 'npm install --global typescript'
+- Run 'npx lerna bootstrap'
+- 'NODE_ENV=production yarn --cwd=packages/react build'
+- Another good command to run is `yarn --cwd=packages/react test`
+- `NODE_ENV=production yarn --cwd=packages/styles build`
+- `npm install`
+- `yarn dev`
+- navigate to localhost:8000 and you should see the cauldron site
+- in a different terminal, navigate to the top level of the source directory
+- see if pa11y is able to validate the site by running `./node_modules/.bin/pa11y-ci -c ./.pa11yci-htmlcs`
+- see if pa11y is able to validate the site via axe by running `./node_modules/.bin/pa11y-ci -c ./.pa11yci-axe`
+- run the pa11y axe tests via yarn `yarn test-pa11y-axe`
+- run the pa11y tests via yarn `yarn test-pa11y-htmlcs`
+- generate the html axe report via `yarn generate-pa11y-axe-report`
+- generate the html htmlcs report via `yarn generate-pa11y-htmlcs-report`
+- navigate in the filesystem to the `dist` directory and you'll see the subdirectories with the respective reports
