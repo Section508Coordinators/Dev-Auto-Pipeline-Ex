@@ -13,6 +13,49 @@ It also contains the documentation / demo app (see `docs/`)
 
 The official repository can be found [here](https://github.com/dequelabs/cauldron 'Official repository link')
 
+There are currently 2 relevant repositories for this project. https://github.com/jessesaga/Temp-OAST-CI-CD-Examples-Task1-Cauldron and ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/Temp-OAST-CI-CD-Examples-Task1-Cauldron
+
+The AWS URL is used to illustrate a full end to end integration of AWS
+tools for Continuous Integration, testing, and deployment.
+
+# Summary
+
+This repository contains 2 separate projects that can be built
+independently but are ultimately pulled together into a static html,
+css, js static HTML site with widgets built using React JS.
+
+The generated site serves as a living example of how to build React
+components for the web that adhere to best practices for accessibility.
+
+This repository also includes full CI/CD pipelines. The two pipelines
+that are currently implemented are for Github Actions and
+Jenkins. Each pipeline does roughly the same thing but the syntax in
+the different configuration files is needed to suite to different
+CI/CD tooling.
+
+The Jenkins pipeline is almost fully represented within the
+Jenkinsfile at the root of this repository. The only extra component
+needed is a Jenkins server that is configured with a project that is
+aware of this Git repository. Also, the Jenkins instance needs to be
+configured with appropriate plugins (Git, AWS) and credentials that
+are referenced from within the Jenkinsfile for deployment to AWS S3.
+
+The Github actions pipeline is defined within
+.github/workflows/node.js.yml. This pipeline runs the same basic steps
+as the Jenkins pipeline. The flow is to check out the latest code,
+fetch dependencies, build each project, run unit tests, spin up a
+local site to run full accessibility tests against the live site, and
+then deploy a production static site to AWS S3. In addition to the
+node.js.yml file - Github secrets need to be configured within the
+repository to allow for the Github actions to publish to S3.
+
+Pa11y is used for these accessibility tests and the
+configuration files that define how the accessibility tests are run
+are `.pa11y-axe` and `pa11y-htmlcs`. Each configuration file uses a
+different 'backend' that is backed by either axe-core or HTML
+CodeSniffer. Also, exclusion rules are applied to trim findings that
+are not relevant for OAST Trusted Tester guidelines.
+
 # Current repository deploy locations
 
 Automated builds via Github Actions and Jenkins are deploying the site to http://temp-oast-ci-cd-examples-task1-cauldron.s3-website-us-east-1.amazonaws.com/
