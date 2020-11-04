@@ -150,3 +150,14 @@ give developers as many options as possible for building the code.
 - generate the html axe report via `yarn generate-pa11y-axe-report`
 - generate the html htmlcs report via `yarn generate-pa11y-htmlcs-report`
 - navigate in the filesystem to the `dist` directory and you'll see the subdirectories with the respective reports
+
+# Package versions
+
+This repository is structured as a monorepo with 2 different
+sub-projects and a top level structure for building the full system.
+
+Periodically package audits should be performed to check for outdated
+or vulnerable dependencies. This can be done in several ways. `npm
+audit` can be run in the home directory and each of the 'packages'
+subdirectories'. This will give a report showing dependencies that
+require attention.
