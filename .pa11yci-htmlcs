@@ -3,8 +3,7 @@
     "chromeLaunchConfig": {
       "args": ["--no-sandbox"]
     },
-    "timeout": 20000,
-    "threshold": 100
+    "timeout": 20000
   },
   "runners": [
     "htmlcs"

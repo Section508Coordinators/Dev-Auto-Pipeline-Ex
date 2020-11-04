@@ -18,6 +18,17 @@ There are currently 2 relevant repositories for this project. https://github.com
 The AWS URL is used to illustrate a full end to end integration of AWS
 tools for Continuous Integration, testing, and deployment.
 
+# MISC - this is a temporary notes section
+
+pa11y-ci has a bug that impacts behavior in unexpected ways
+
+https://github.com/pa11y/pa11y-ci/issues/70
+
+If the error threshold is specified in the pa11y-ci config file then
+even when errors are detected, if they're under the threshold, they
+don't end up in the final report. This means that threshold must be
+specified on the command line via the `-T` parameter.
+
 # Summary
 
 This repository contains 2 separate projects that can be built

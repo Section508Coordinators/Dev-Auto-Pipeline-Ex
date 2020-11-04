@@ -4,8 +4,7 @@
       "args": ["--no-sandbox"],
       "ignoreHTTPSErrors": true
     },
-    "timeout": 20000,
-    "threshold": 100
+    "timeout": 20000
   },
   "runners": [
     "axe"
