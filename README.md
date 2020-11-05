@@ -96,19 +96,18 @@ give developers as many options as possible for building the code.
 - Run an elevated Windows powershell (run as administrator)
 - Accept the defaults
 - Start a new git-bash shell (close the old one if it's still open) and navigate to the top level of the project
-- Run 'npm install --global yarn'
-- Run 'npm install --global lerna'
-- Run 'npm install --global typescript'
+  <!-- - Run 'npm install --global yarn' -->
+  <!-- - Run 'npm install --global lerna' -->
+  <!-- - Run 'npm install --global typescript' -->
 - Run 'npx lerna bootstrap'
 - In the new git-bash shell, cd to the cauldron checkout and run 'NODE_ENV=production yarn --cwd=packages/react build'
 - Another good command to run is 'yarn --cwd=packages/react test'
 - 'NODE_ENV=production yarn --cwd=packages/styles build'
-- 'npm install'
 - 'yarn dev'
 - navigate to localhost:8000 and you should see the cauldron site
 - in a different git bash window, navigate to the top level of the source directory
-- see if pa11y is able to validate the site by running './node_modules/.bin/pa11y-ci -c ./.pa11yci-htmlcs'
-- see if pa11y is able to validate the site via axe by running './node_modules/.bin/pa11y-ci -c ./.pa11yci-axe'
+- see if pa11y is able to validate the site by running 'npx pa11y-ci -c ./.pa11yci-htmlcs'
+- see if pa11y is able to validate the site via axe by running 'npx pa11y-ci -c ./.pa11yci-axe'
 - run the pa11y axe tests via yarn 'yarn test-pa11y-axe'
 - run the pa11y tests via yarn 'yarn test-pa11y-htmlcs'
 - generate the html axe report via 'yarn generate-pa11y-axe-report'
@@ -140,6 +139,7 @@ give developers as many options as possible for building the code.
 - follow the previously mentioned build steps to build and run the code
 
 ## building the code on Linux
+
 - Install git tools from your Linux package manager
 - Install node related tooling from your linux package manager (node, yarn, lerna, typescript) if available
 - Open a terminal clone the repo `git clone https://github.com/jessesaga/Temp-OAST-CI-CD-Examples-Task1-Cauldron`
@@ -154,8 +154,8 @@ give developers as many options as possible for building the code.
 - `yarn dev`
 - navigate to localhost:8000 and you should see the cauldron site
 - in a different terminal, navigate to the top level of the source directory
-- see if pa11y is able to validate the site by running `./node_modules/.bin/pa11y-ci -c ./.pa11yci-htmlcs`
-- see if pa11y is able to validate the site via axe by running `./node_modules/.bin/pa11y-ci -c ./.pa11yci-axe`
+- see if pa11y is able to validate the site by running `npx pa11y-ci -c ./.pa11yci-htmlcs`
+- see if pa11y is able to validate the site via axe by running `npx pa11y-ci -c ./.pa11yci-axe`
 - run the pa11y axe tests via yarn `yarn test-pa11y-axe`
 - run the pa11y tests via yarn `yarn test-pa11y-htmlcs`
 - generate the html axe report via `yarn generate-pa11y-axe-report`
@@ -168,7 +168,17 @@ This repository is structured as a monorepo with 2 different
 sub-projects and a top level structure for building the full system.
 
 Periodically package audits should be performed to check for outdated
-or vulnerable dependencies. This can be done in several ways. `npm
-audit` can be run in the home directory and each of the 'packages'
+or vulnerable dependencies. This can be done in several ways. `yarn audit` can be run in the home directory and each of the 'packages'
 subdirectories'. This will give a report showing dependencies that
 require attention.
+
+Updating dependencies in the case of vulnerabilities can be a
+challenging task. This is beyond the current scope of this document
+but here is a brief example of how yarn-audit-fix can be used to
+update package dependencies with issues.
+
+In the home directory and each package directory of the project run
+`npx yarn-audit-fix --force`
+
+This may take a while to complete. After updating dependencies you
+will need to verify that no bugs have been introduced by the changes.
