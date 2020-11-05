@@ -60,7 +60,11 @@ jobs:
     - run: yarn dev &
     - run: sleep 20 && yarn test-pa11y-axe
       continue-on-error: true
+    - run: yarn print-pa11y-axe-cli-results
+      continue-on-error: true
     - run: yarn test-pa11y-htmlcs
+      continue-on-error: true
+    - run: yarn print-pa11y-htmlcs-cli-results
       continue-on-error: true
     - run: yarn generate-pa11y-axe-report
       continue-on-error: true
