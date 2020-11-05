@@ -40,7 +40,7 @@ pipeline {
         sh 'yarn dev &'
         sh 'wait-for-it.sh --timeout=30 localhost:8000 && yarn test-pa11y-axe'
         sh 'yarn generate-pa11y-axe-report'
-
+				sh 'yarn print-pa11y-axe-cli-results'
       }
     }
     stage('Test A11y (htmlcs)') {
@@ -48,7 +48,7 @@ pipeline {
         sh 'yarn dev &'
         sh 'wait-for-it.sh --timeout=30 localhost:8000 && yarn test-pa11y-htmlcs'
         sh 'yarn generate-pa11y-htmlcs-report'
-
+				sh 'yarn print-pa11y-htmlcs-cli-results'
       }
     }
 
