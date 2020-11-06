@@ -100,6 +100,7 @@ give developers as many options as possible for building the code.
   <!-- - Run 'npm install --global lerna' -->
   <!-- - Run 'npm install --global typescript' -->
 - Run 'npx lerna bootstrap'
+- Run 'npx yarn install'
 - In the new git-bash shell, cd to the cauldron checkout and run 'NODE_ENV=production yarn --cwd=packages/react build'
 - Another good command to run is 'yarn --cwd=packages/react test'
 - 'NODE_ENV=production yarn --cwd=packages/styles build'
@@ -111,8 +112,9 @@ give developers as many options as possible for building the code.
 - run the pa11y axe tests via yarn 'yarn test-pa11y-axe'
 - run the pa11y tests via yarn 'yarn test-pa11y-htmlcs'
 - generate the html axe report via 'yarn generate-pa11y-axe-report'
-- generate the html htmlcs report via 'yarn generate-pa11y-htmlcs-report
+- generate the html htmlcs report via 'yarn generate-pa11y-htmlcs-report`
 - navigate in explorer to docs/dist and you'll see the subdirectories with the respective reports
+- you can view the report results in the command window (assuming you generated them previously) by running `yarn print-pa11y-axe-cli-results` and `yarn print-pa11y-htmlcs-cli-results`
 
 ### VSCode + Docker Desktop
 
