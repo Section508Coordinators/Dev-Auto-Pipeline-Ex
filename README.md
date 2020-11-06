@@ -95,12 +95,12 @@ give developers as many options as possible for building the code.
   automatically handle compiling native dependencies by installing chocolatey
 - NOTE - the elevated command window and global install commands below
   may also be run without elevation if you prefix the all yarn and lerna commands with npx
-- Run an elevated Windows powershell (run as administrator)
+- Run an elevated Windows powershell (run as administrator unless you're going with the local npx approach mentioned above)
 - Accept the defaults
 - Start a new git-bash shell (close the old one if it's still open) and navigate to the top level of the project
-  <!-- - Run 'npm install --global yarn' -->
-  <!-- - Run 'npm install --global lerna' -->
-  <!-- - Run 'npm install --global typescript' -->
+- Run 'npm install --global yarn' (omit this command if using npx)
+- Run 'npm install --global lerna' (omit this command if using npx)
+- Run 'npm install --global typescript' (omit this command if using npx)
 - Run 'npx lerna bootstrap'
 - Run 'npx yarn install'
 - In the new git-bash shell, cd to the cauldron checkout and run 'NODE_ENV=production yarn --cwd=packages/react build'
