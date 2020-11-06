@@ -72,6 +72,12 @@ jobs:
       continue-on-error: true
     - run: yarn build
 
+    - name: Archive reports and site
+      uses: actions/upload-artifact@v2
+      with:
+        name: docs-dist-files
+        path: docs/dist
+
     - name: Upload Website
       uses: jakejarvis/s3-sync-action@master
       with:
