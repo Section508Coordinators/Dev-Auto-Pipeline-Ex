@@ -93,6 +93,8 @@ give developers as many options as possible for building the code.
 - Install the NodeJS tools for Windows from https://nodejs.org/en/download/
 - Select the default options, but at the end choose to have it
   automatically handle compiling native dependencies by installing chocolatey
+- NOTE - the elevated command window and global install commands below
+  may also be run without elevation if you prefix the all yarn and lerna commands with npx
 - Run an elevated Windows powershell (run as administrator)
 - Accept the defaults
 - Start a new git-bash shell (close the old one if it's still open) and navigate to the top level of the project
