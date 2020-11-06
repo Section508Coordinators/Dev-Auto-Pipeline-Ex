@@ -1,4 +1,4 @@
-# cauldron
+# cauldron.
 
 > The deque pattern library
 
