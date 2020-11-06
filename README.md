@@ -84,7 +84,7 @@ give developers as many options as possible for building the code.
 
 ## building the code on windows
 
-### starting with git windows command line tools
+### starting with git windows command line tools (this is dependent on the git-bash toolset and commands must be run in git-bash)
 
 - Install GIT Windows tools from https://git-scm.com/downloads
 - Download and run the installer
