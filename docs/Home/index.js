@@ -15,11 +15,11 @@ const Home = () => (
       {'$ npm install --save @deque/cauldron-react @deque/cauldron-styles'}
     </Code>
   <h2>Usage</h2>
-  {/*  <div style={divStyle}>
+    <div style={divStyle}>
       hello
       <img src="/public/fonts/logo.svg" width="100" />
     </div>
-  */}
+  
     <Code language="javascript">
       {`
 import { Workspace, Button } from '@deque/cauldron-react';
