@@ -52,10 +52,15 @@ jobs:
         key: v1-styles-deps-${{ hashFiles('packages/styles/yarn.lock') }}
         restore-keys: v1-styles-deps-
 
+    - name: Ensure yarn and lerna build build tools are initialized and ready for usage
     - run: yarn
     - run: npx lerna bootstrap
+    
+    - name: Build monorepo styles project and the react project
     - run: NODE_ENV=production yarn --cwd=packages/styles build
     - run: NODE_ENV=production yarn --cwd=packages/react build
+    
+    - name: Perform unit tests (a11y and functional) against the react code
     - run: yarn --cwd=packages/react test
     - run: yarn dev &
     - run: sleep 20 && yarn test-pa11y-axe
