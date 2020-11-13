@@ -20,15 +20,15 @@ jobs:
         node-version: [10.x]
 
     steps:
-    - name: Git checkout
+    - name: Use git to pull the latest source code into the test environment
       uses: actions/checkout@v2
 
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Run tests using Node.js version ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Cache yarn modules
+    - name: Cache yarn modules (don't refetch from internet if possible)
       uses: actions/cache@v2
       with:
         path: |
@@ -38,14 +38,14 @@ jobs:
         key: v1-yarn-deps-${{ hashFiles('yarn.lock') }}
         restore-keys: v1-yarn-deps-
 
-    - name: Cache react modules
+    - name: Cache react modules (don't refetch from internet if possible)
       uses: actions/cache@v2
       with:
         path: packages/react/node_modules
         key: v1-react-deps-${{ hashFiles('packages/react/yarn.lock') }}
         restore-keys: v1-react-deps-
 
-    - name: Cache styles modules
+    - name: Cache styles modules (don't refetch from internet if possible)
       uses: actions/cache@v2
       with:
         path: packages/styles/node_modules
