@@ -54,6 +54,11 @@ your new remote origin.
 Log into your AWS console, navigate to S3, and begin the process of
 creating a new bucket to store your generated site and reports.
 
+> For simplicity sake - we're going to make an assumption in these
+> directions that your S3 bucket operations all happen in the
+> US-East-1 region. If your bucket is not in this region, there are
+> additional steps that may be required.
+
 - Click 'Create Bucket'
 - You can accept the defaults unless you have specific requirements
   that would dictate otherwise
@@ -67,8 +72,8 @@ creating a new bucket to store your generated site and reports.
     'Read' access and save
 - Navigate to the properties tab and check the 'Static Website
   Hosting' section. Note the https endpoint. In my case, it's
-  http://saga-deleteme1.s3-website-us-east-1.amazonaws.com. You'll use
-  this in your GitHub secrets config.
+  http://saga-deleteme1.s3-website-us-east-1.amazonaws.com. This is
+  the URL you'll use to view your deployed site.
 
 ## IAM setup for deployment to S3 bucket
 
@@ -131,8 +136,9 @@ to successfully deploy to S3.
 2. AWS_S3_BUCKET
 3. AWS_SECRET_ACCESS_KEY
 
-- Set these to their corresponding values using the S3 Bucket website
-  endpoint for the AWS_S3_BUCKET parameter (leave off the http:// prefix)
+- Set these to their corresponding values using the S3 Bucket name
+  without the ARN or other information for the AWS_S3_BUCKET
+  parameter.  In this example the value would be 'saga-deleteme1'
 - Trigger a new workflow to run by either committing code to the
   develop branch or navigating to 'Actions' drilling into the jobs and
   select 'Rerun all jobs'
