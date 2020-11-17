@@ -54,35 +54,48 @@ jobs:
 
     - name: Ensure yarn and lerna tooling is initialized
       run: yarn && npx lerna bootstrap
-    
+
     - name: Build monorepo styles project and the react project
       run: NODE_ENV=production yarn --cwd=packages/styles build && NODE_ENV=production yarn --cwd=packages/react build
-    
+
     - name: Perform unit tests (a11y and functional) against the react code
       run: yarn --cwd=packages/react test
 
-    - run: yarn dev &
-    - run: sleep 20 && yarn test-pa11y-axe
+    - name: Run the site in dev mode and keep it running for the following full site scans
+      run: yarn dev &
+
+    - name: Use Pa11y with the Axe ruleset to check every page of our running site
+      run: sleep 5 && yarn test-pa11y-axe
       continue-on-error: true
-    - run: yarn print-pa11y-axe-cli-results
+
+    - name: View the Pa11y Axe results
+      run: yarn print-pa11y-axe-cli-results
       continue-on-error: true
-    - run: yarn test-pa11y-htmlcs
+
+    - name: Use Pa11y with the HTMLCodeSniffer ruleset to check every page of our running site
+      run: yarn test-pa11y-htmlcs
       continue-on-error: true
-    - run: yarn print-pa11y-htmlcs-cli-results
+
+    - name: View the Pa11y HTMLCodesniffer results
+      run: yarn print-pa11y-htmlcs-cli-results
       continue-on-error: true
-    - run: yarn generate-pa11y-axe-report
+
+    - name: Build the html report from the Pa11y Axe ruleset results
+      run: yarn generate-pa11y-axe-report
       continue-on-error: true
-    - run: yarn generate-pa11y-htmlcs-report
+
+    - name: Build the html report from the Pa11y HTMLCodeSniffer results
+      run: yarn generate-pa11y-htmlcs-report
       continue-on-error: true
     - run: yarn build
 
-    - name: Archive reports and site
+    - name: Archive reports and site and keep for downloading
       uses: actions/upload-artifact@v2
       with:
         name: docs-dist-files
         path: docs/dist
 
-    - name: Upload Website
+    - name: Upload the generated website and Pa11y reports to their hosting location on AWS S3
       uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks --delete
