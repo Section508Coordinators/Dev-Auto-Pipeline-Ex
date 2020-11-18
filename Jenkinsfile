@@ -16,7 +16,7 @@ pipeline {
     // AWS_REGION: 'us-east-1'
   }
   stages {
-    stage('Deps') {
+    stage('Install all development dependencies and tools') {
       steps {
         // sh 'npm install yarn'
         // sh './node_modules/.bin/yarn'
@@ -24,18 +24,18 @@ pipeline {
         sh 'npx lerna bootstrap'
       }
     }
-    stage('Build') {
+    stage('Build the styles project and the react components project') {
       steps {
         sh 'NODE_ENV=production yarn --cwd=packages/styles build'
         sh 'NODE_ENV=production yarn --cwd=packages/react build'
       }
     }
-    stage('Test') {
+    stage('Run unit tests against the react project') {
       steps {
         sh 'yarn --cwd=packages/react test'
       }
     }
-    stage('Test A11y (axe)') {
+    stage('Test full site using Axe and generate reports') {
       steps {
         sh 'yarn dev &'
         sh 'wait-for-it.sh --timeout=30 localhost:8000 && yarn test-pa11y-axe'
@@ -43,7 +43,7 @@ pipeline {
 				sh 'yarn print-pa11y-axe-cli-results'
       }
     }
-    stage('Test A11y (htmlcs)') {
+    stage('Test full site using HTMLCS and generate reports)') {
       steps {
         sh 'yarn dev &'
         sh 'wait-for-it.sh --timeout=30 localhost:8000 && yarn test-pa11y-htmlcs'
@@ -52,13 +52,13 @@ pipeline {
       }
     }
 
-    stage('Build All') {
+    stage('Build and package the entire site') {
       steps {
         sh 'yarn build'
       }
     }
 
-    stage('Publish to S3') {
+    stage('Publish the site and reports to S3') {
       steps {
         withAWS(credentials:'jenkins-temp-oast-ci-cd-examples-task1-cauldron-s3', region: "us-east-1") {
           s3Upload(file:'docs/dist', bucket:'temp-oast-ci-cd-examples-task1-cauldron', acl:'PublicRead')
