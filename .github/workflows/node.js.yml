@@ -28,29 +28,29 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    # - name: Cache yarn modules (don't refetch from internet if possible)
-    #   uses: actions/cache@v2
-    #   with:
-    #     path: |
-    #       ~/.npm
-    #       ~/.cache/yarn
-    #       node_modules
-    #     key: v1-yarn-deps-${{ hashFiles('yarn.lock') }}
-    #     restore-keys: v1-yarn-deps-
+    - name: Cache yarn modules (don't refetch from internet if possible)
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.npm
+          ~/.cache/yarn
+          node_modules
+        key: v1-yarn-deps-${{ hashFiles('yarn.lock') }}
+        restore-keys: v1-yarn-deps-
 
-    # - name: Cache react modules (don't refetch from internet if possible)
-    #   uses: actions/cache@v2
-    #   with:
-    #     path: packages/react/node_modules
-    #     key: v1-react-deps-${{ hashFiles('packages/react/yarn.lock') }}
-    #     restore-keys: v1-react-deps-
+    - name: Cache react modules (don't refetch from internet if possible)
+      uses: actions/cache@v2
+      with:
+        path: packages/react/node_modules
+        key: v1-react-deps-${{ hashFiles('packages/react/yarn.lock') }}
+        restore-keys: v1-react-deps-
 
-    # - name: Cache styles modules (don't refetch from internet if possible)
-    #   uses: actions/cache@v2
-    #   with:
-    #     path: packages/styles/node_modules
-    #     key: v1-styles-deps-${{ hashFiles('packages/styles/yarn.lock') }}
-    #     restore-keys: v1-styles-deps-
+    - name: Cache styles modules (don't refetch from internet if possible)
+      uses: actions/cache@v2
+      with:
+        path: packages/styles/node_modules
+        key: v1-styles-deps-${{ hashFiles('packages/styles/yarn.lock') }}
+        restore-keys: v1-styles-deps-
 
     - name: Ensure yarn and lerna tooling is initialized
       run: yarn && npx lerna bootstrap
