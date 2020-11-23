@@ -46,6 +46,9 @@
   parameters
 - Select 'Create Build Project'
 
+## Generate a buildspec.yml file to implement the build pipeline
+
+See the example in [buildspec.yml](buildspec.yml)
 
 
 
