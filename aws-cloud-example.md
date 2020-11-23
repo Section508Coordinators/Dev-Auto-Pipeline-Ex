@@ -23,11 +23,29 @@
   local code repository to CodeCommit.
 - Navigate to your local repository with your projects
 - Use git to add a new remote pointing to your newly created CodeCommit repo
+	https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes
 - Git push to your new remote
 
+## AWS CodeBuild
 
-Temp-OAST-CI-CD-Examples-Task1-Cauldron repository to AWS.
+- Select 'create build project'
+- Name the project (matching the repo name makes sense)
+- For the Source 1 - Primary select 'AWS CodeCommit' and the
+  repository you created and populated in the previous set of steps
+- Reference type should default to 'Branch'
+- Choose the default branch
+- Keep the clone depth at 1
+- Use a 'Managed image' and select 'Ubuntu'
+- Use the 'Standard' runtime
+- Use the latest codebuild standard image
+- Environment should be Linux
+- Select 'New service role' unless you already have a service role
+  that was previously set up
+- Default to the normal buildspec yaml config
+- Deselect Cloudwatch logs for now and don't alter the artifacts
+  parameters
+- Select 'Create Build Project'
 
-I followed the examples to connect via ssh for linux (after creating
-the repository you can drill into connection instructions per platform).
+
+
 
