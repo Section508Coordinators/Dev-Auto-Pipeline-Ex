@@ -8,7 +8,16 @@ phases:
       - lerna bootstrap --no-ci --concurrency 4
   build:
     commands:
-      - lerna run build --concurrency 4
+      - NODE_ENV=production yarn --cwd=packages/styles build
+      - NODE_ENV=production yarn --cwd=packages/react build
+      # - lerna run build --concurrency 4
+  test:
+    commands:
+      - yarn --cwd=packages/react test
+        - yarn dev &
+        - wait-for-it.sh --timeout=30 localhost:8000 && yarn test-pa11y-axe
+        - yarn generate-pa11y-axe-report
+        - yarn print-pa11y-axe-cli-results
 artifacts:
   files:
     - "docs/dist/*"

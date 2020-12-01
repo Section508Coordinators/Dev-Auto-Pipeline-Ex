@@ -42,13 +42,21 @@
 - Select 'New service role' unless you already have a service role
   that was previously set up
 - Default to the normal buildspec yaml config
-- Deselect Cloudwatch logs for now and don't alter the artifacts
-  parameters
+- Enter the Cloudwatch group 'Temp-OAST-CI-CD-Examples-Task1-Cauldron'
+  and stream 'develop-branch-build' name
 - Select 'Create Build Project'
+- View the output log to ensure there are no errors
+- You can also navigate to Cloudwatch, find the log group and stream,
+  and view historical build logs there
 
 ## Generate a buildspec.yml file to implement the build pipeline
 
 See the example in [buildspec.yml](buildspec.yml)
+
+- Commit buildspec.yml and push to the AWS hosted Git develop branch
+- Navigate to CodeBuild->Build Projects, select the previously created
+  project and click 'start build'
+- Accept the defaults and click the 'Start Build' button at the bottom
 
 
 
