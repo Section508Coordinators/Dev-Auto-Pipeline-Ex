@@ -13,6 +13,7 @@ phases:
       - npm install -g lerna
   pre_build:
     commands:
+      - yarn
       - lerna bootstrap --no-ci --concurrency 4
   build:
     commands:
