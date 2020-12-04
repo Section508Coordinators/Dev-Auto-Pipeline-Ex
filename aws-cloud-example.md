@@ -48,6 +48,8 @@
 - View the output log to ensure there are no errors
 - You can also navigate to Cloudwatch, find the log group and stream,
   and view historical build logs there
+- Navigate to the build project and create a build trigger
+- 
 
 ## Generate a buildspec.yml file to implement the build pipeline
 
