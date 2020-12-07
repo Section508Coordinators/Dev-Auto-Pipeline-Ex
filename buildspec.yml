@@ -19,6 +19,7 @@ phases:
     commands:
       - yarn --cwd=packages/styles build
       - yarn --cwd=packages/react build
+      - yarn build
       # - lerna run build --concurrency 4
   post_build:
     commands:
@@ -27,6 +28,10 @@ phases:
       - sleep 5 && yarn test-pa11y-axe
       - yarn generate-pa11y-axe-report
       - yarn print-pa11y-axe-cli-results
+      - yarn test-pa11y-htmlcs
+      - yarn generate-pa11y-htmlcs-report
+      - yarn print-pa11y-htmlcs-cli-results
+
 artifacts:
   files:
     - "*"
