@@ -29,4 +29,5 @@ phases:
       - yarn print-pa11y-axe-cli-results
 artifacts:
   files:
-    - "docs/dist/*"
+    - "*"
+  base-directory: docs/dist

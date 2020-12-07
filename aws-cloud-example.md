@@ -49,7 +49,13 @@
 - You can also navigate to Cloudwatch, find the log group and stream,
   and view historical build logs there
 - Navigate to the build project and create a build trigger
-- 
+	- .......NOTE - it seems that there's no easy way to trigger on
+  commit. It can be set up to be a timed job but not triggered without
+  jumping through hoops involving lamba functions.
+ - Went ahead and created a build trigger to run every hour to see how it behaves
+ - The trigger always runs based on the schedule and it doesn't bother
+   to detect whether it should run based on code changes
+ - Deleted my build trigger
 
 ## Generate a buildspec.yml file to implement the build pipeline
 
@@ -60,5 +66,29 @@ See the example in [buildspec.yml](buildspec.yml)
   project and click 'start build'
 - Accept the defaults and click the 'Start Build' button at the bottom
 
+## Create an artifact repository to store build artifacts
 
+At this point we have a basic working build but we want to be able to
+store the build artifacts (site and reports) somewhere.
 
+- Navigate to CodeCommit and select Artifacts->Repositories
+- Create a new artifact repository
+- You may need to create a 'domain' at this point. I'm choosing the
+  same name as my repo and artifact repo - 'temp-oast-ci-cd-examples-task1-cauldron'
+
+*TURNS OUT THAT THIS IS NOT THE RIGHT TOOL!*
+
+It appears that this particular artifact repository is not for general
+purpose artifacts but is meant to host standardized build packages
+(npm, maven, etc). This is not currently useful for us.
+
+- Delete the repository and domain that you just created
+
+## Enable S3 artifacts on the Build project
+
+- Navigate to CodeBuild->Build Projects and edit the project selecting 'artifacts'
+- Select S3
+- Select a pre-existing S3 bucket. I'm using our already established
+  bucket and placing the contents of this build in a subfolder
+- Accept the rest of the defaults
+- Start a new build and hope the artifacts end up in the right place?
