@@ -91,4 +91,37 @@ purpose artifacts but is meant to host standardized build packages
 - Select a pre-existing S3 bucket. I'm using our already established
   bucket and placing the contents of this build in a subfolder
 - Accept the rest of the defaults
-- Start a new build and hope the artifacts end up in the right place?
+- Start a new build and hope the artifacts end up in the right place
+- It worked!
+- Unfortunately the new folder is not public and it appears that the
+  objects are encrypted
+- Updated the s3 folder to be public
+- Error on viewing the folder and index.html file in the folder
+  related to the previously mentioned encryption from codebuild
+- Navigate back to edit the build project, edit and select 'disable artifact encryption'
+- Try another build
+- It appears that every codebuild artifact is not public and has to be
+  made manually public at this point
+- added the following policy to the permissions tab of the s3 bucket to ensure public access
+
+``` json
+	{
+    "Version": "2008-10-17",
+    "Id": "temp-oast-ci-cd-example-putlic-cauldron-policy",
+    "Statement": [
+        {
+            "Sid": "temp-oast-ci-cd-example-putlic-cauldron-policy-stm1",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::temp-oast-ci-cd-examples-task1-cauldron/*"
+        }
+    ]
+	}
+```
+
+- everything is basically working now but it turns out that the
+  cauldron code has non-relative references to css which breaks
+  deploying the site at a sub-path
