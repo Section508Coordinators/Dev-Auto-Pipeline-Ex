@@ -122,6 +122,18 @@ purpose artifacts but is meant to host standardized build packages
 	}
 ```
 
-- everything is basically working now but it turns out that the
+- Everything is basically working now but it turns out that the
   cauldron code has non-relative references to css which breaks
-  deploying the site at a sub-path
+  deploying the site at a sub-path under the s3 top level
+  bucket. Fixing this is nontrivial due to the react router
+  setup. We'd have to set up a basename and work with the Cauldron
+  code more than is necessary for our setup. Going to test a build
+  from AWS to the top level. In order to do this I'm going to revisit
+  our Artifact configuration described above and change the location
+  to a new s3 bucket cloned from the original. This requires a similar
+  setup as described above..
+- Cloned the old s3 folder, enabled hosting, set perms, changed the
+  build project artifact settings to point to the new bucket, had to
+  update the Name field to be '/' to prevent deployment to a sub-path
+  defaulting to the project name.
+- Performed another codebuild - it works!
