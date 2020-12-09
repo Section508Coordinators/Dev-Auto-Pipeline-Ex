@@ -9,6 +9,21 @@ This monorepo contains the following packages:
 
 It also contains the documentation / demo app (see `docs/`)
 
+In addition it contains customized instructions for integrating A11y
+testing and reporting into CI/CD pipelines using multiple toolsets
+including Pa11y, Axe-Core, HtmlCodeSniffer, Github Actions, Jenkins,
+Aws CodeCommit, AWS CodeBuild, and more.
+
+Local configuration and setup directions can be found below.
+
+In addition there is documentation in the [oast-docs](oast-docs) folder
+describing ci-cd configurations and other documentation about how to
+modify aspects of pipelines including build labels.
+
+- [AWS Cloud CI/CD setup and example](oast-docs/aws-cloud-example.md)
+- [From scratch setup of Github with Github Actions and S3 deployment and hosting](oast-docs/ci-cd-setup-from-scratch.md)
+- [Updating build label steps for the various pipelines](oast-docs/updating-ci-build-labels.md)
+
 # Note - this is not the official Cauldron repository
 
 The official repository can be found [here](https://github.com/dequelabs/cauldron 'Official repository link')
