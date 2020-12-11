@@ -56,6 +56,11 @@
  - The trigger always runs based on the schedule and it doesn't bother
    to detect whether it should run based on code changes
  - Deleted my build trigger
+ 
+************ 
+*TODO* Later on I discovered that the best build trigger and
+deployment method is to use codepipeline. We'll want to revise these directions.
+***********
 
 ## Generate a buildspec.yml file to implement the build pipeline
 
@@ -68,6 +73,8 @@ See the example in [buildspec.yml](buildspec.yml)
 
 ## Create an artifact repository to store build artifacts
 
+*TURNS OUT THAT THIS IS NOT THE RIGHT TOOL! Do not follow these steps*
+
 At this point we have a basic working build but we want to be able to
 store the build artifacts (site and reports) somewhere.
 
@@ -75,8 +82,6 @@ store the build artifacts (site and reports) somewhere.
 - Create a new artifact repository
 - You may need to create a 'domain' at this point. I'm choosing the
   same name as my repo and artifact repo - 'temp-oast-ci-cd-examples-task1-cauldron'
-
-*TURNS OUT THAT THIS IS NOT THE RIGHT TOOL!*
 
 It appears that this particular artifact repository is not for general
 purpose artifacts but is meant to host standardized build packages
@@ -137,6 +142,9 @@ purpose artifacts but is meant to host standardized build packages
   update the Name field to be '/' to prevent deployment to a sub-path
   defaulting to the project name.
 - Performed another codebuild - it works!
+
+*TODO* in the next section figured out the best way to manage
+deployments. Revise the previous instructions.
 
 # AWS Code Pipeline
 
