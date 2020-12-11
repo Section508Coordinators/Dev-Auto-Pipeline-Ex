@@ -137,3 +137,19 @@ purpose artifacts but is meant to host standardized build packages
   update the Name field to be '/' to prevent deployment to a sub-path
   defaulting to the project name.
 - Performed another codebuild - it works!
+
+# AWS Code Pipeline
+
+- Navigate to CodePipeline and create a new pipeline
+- Accept the defaults and click next
+- Select the source provider 'CodeCommit'
+- Select the repository
+- Select the branch 'develop'
+- Select the output artifact format 'Full Clone'
+- Accept the defaults and click next
+- Select CodeBuild as the build provider
+- Select our CodeBuild project
+- Keep the defaults and click 'next'
+- Select the Deploy Provider 'S3'
+- Select 'Extract file before deploy'
+- Create the pipeline
