@@ -34,5 +34,5 @@ phases:
 
 artifacts:
   files:
-    - "*"
+    - "**/*"
   base-directory: docs/dist
