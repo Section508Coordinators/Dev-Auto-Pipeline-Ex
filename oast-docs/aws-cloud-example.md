@@ -161,3 +161,14 @@ deployments. Revise the previous instructions.
 - Select the Deploy Provider 'S3'
 - Select 'Extract file before deploy'
 - Create the pipeline
+
+# Undo our artifact deployment from the CodeBuild section
+
+We're undoing our previous deployment method because it's handled by
+Code Pipeline.
+
+- Navigate to CodeBuild -> Projects and edit the Artifacts
+  configuration for our project
+- Change the artifact setting to 'No Artifacts' and click 'Update Artifacts'
+
+
