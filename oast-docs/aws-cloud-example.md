@@ -186,4 +186,11 @@ Added the following to the bottom of the buildspec.yml file
 
 ```
 
+This didn't work. Apparently the codebuild project needs to have the
+artifact configuration changed. 
 
+# Update the CodeBuild project to include a local cache artifact
+
+- Edit the build project and select artifacts
+- Select additional configuration and cache type 'local'
+- Check the checkbox for 'custom cache'
