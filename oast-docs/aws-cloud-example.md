@@ -178,8 +178,8 @@ Added the following to the bottom of the buildspec.yml file
 ``` yaml
 	cache:
   paths:
-    - ~/.npm/*/**
-    - ~/.cache/yarn/*/**
+    - /root/.npm/*/**
+    - /root/.cache/yarn/*/**
     - node_modules/*/**
     - packages/react/node_modules/*/**
     - packages/styles/node_modules/*/**
