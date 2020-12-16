@@ -36,3 +36,11 @@ artifacts:
   files:
     - "**/*"
   base-directory: docs/dist
+
+cache:
+  paths:
+    - ~/.npm/*/**
+    - ~/.cache/yarn/*/**
+    - node_modules/*/**
+    - packages/react/node_modules/*/**
+    - packages/styles/node_modules/*/**

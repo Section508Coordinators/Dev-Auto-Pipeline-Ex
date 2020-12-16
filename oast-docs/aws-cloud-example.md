@@ -171,4 +171,17 @@ Code Pipeline.
   configuration for our project
 - Change the artifact setting to 'No Artifacts' and click 'Update Artifacts'
 
+# Implement caching to speed up the build
 
+Added the following to the bottom of the buildspec.yml file
+
+``` yaml
+	cache:
+  paths:
+    - ~/.npm/*/**
+    - ~/.cache/yarn/*/**
+    - node_modules/*/**
+    - packages/react/node_modules/*/**
+    - packages/styles/node_modules/*/**
+
+```
