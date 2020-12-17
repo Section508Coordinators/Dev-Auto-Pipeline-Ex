@@ -194,3 +194,7 @@ artifact configuration changed.
 - Edit the build project and select artifacts
 - Select additional configuration and cache type 'local'
 - Check the checkbox for 'custom cache'
+
+This sped the build up by 2 minutes.
+
+
