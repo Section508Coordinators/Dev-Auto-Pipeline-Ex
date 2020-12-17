@@ -197,4 +197,26 @@ artifact configuration changed.
 
 This sped the build up by 2 minutes.
 
+# Production CI/CD
 
+- Created a 'stable' branch that should only be merged to from a
+stable branch when ready for a release. This will kick off a
+production release CI/CD pipeline that will incorporate a deploy to
+staging and a manual review before deploying to production.
+- Created a prod release bucket in S3 to simulate the production site
+
+## Create the prod pipeline
+
+- Navigate to CodePipeline and create a new pipeline
+- Accept the defaults and click next
+- Select the source provider 'CodeCommit'
+- Select the repository
+- Select the branch 'stable'
+- Select the output artifact format 'Full Clone'
+- Accept the defaults and click next
+- Select CodeBuild as the build provider
+- Select our CodeBuild project
+- Keep the defaults and click 'next'
+- Select the Deploy Provider 'S3'
+- Select 'Extract file before deploy'
+- Create the pipeline
