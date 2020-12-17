@@ -36,6 +36,16 @@ artifacts:
   files:
     - "**/*"
   base-directory: docs/dist
+  name: site-and-report-files
+  secondary-artifacts:
+    artifactIdentifier:
+      files:
+        - *.js
+        - *.css
+        - public/*/**
+      name: site-files
+      discard-paths: no
+      base-directory: docs/dist
 
 cache:
   paths:
