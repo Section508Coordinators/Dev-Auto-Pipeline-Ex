@@ -38,7 +38,7 @@ artifacts:
   base-directory: docs/dist
   name: site-and-report-files
   secondary-artifacts:
-    artifactIdentifier:
+    prod-artifacts:
       files:
         - *.js
         - *.css
