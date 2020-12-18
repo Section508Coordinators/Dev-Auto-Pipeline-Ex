@@ -33,11 +33,12 @@ phases:
       - yarn print-pa11y-htmlcs-cli-results
 
 artifacts:
-  files:
-    - "**/*"
-  name: BuildArtifact
-  base-directory: docs/dist
   secondary-artifacts:
+    StagingArtifact:
+      files:
+        - "**/*"
+      name: StagingArtifact
+      base-directory: docs/dist
     ProdBuildArtifact:
       files:
         - "*.js"
