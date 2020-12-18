@@ -43,6 +43,8 @@ artifacts:
       files:
         - "*.js"
         - "*.css"
+        - "*.html"
+        - "*.ico"
         - "public/*/**"
       name: ProdBuildArtifact
       base-directory: docs/dist
