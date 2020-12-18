@@ -35,16 +35,14 @@ phases:
 artifacts:
   files:
     - "**/*"
-  base-directory: docs/dist
   name: site-and-report-files
+  base-directory: docs/dist
   secondary-artifacts:
     prod-artifacts:
       files:
         - *.js
         - *.css
         - public/*/**
-      name: site-files
-      discard-paths: no
       base-directory: docs/dist
 
 cache:
