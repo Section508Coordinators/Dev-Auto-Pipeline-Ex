@@ -35,7 +35,7 @@ phases:
 artifacts:
   files:
     - "**/*"
-  name: site-and-report-files
+  name: BuildArtifact
   base-directory: docs/dist
   secondary-artifacts:
     ProdBuildArtifact:
