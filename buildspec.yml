@@ -38,12 +38,12 @@ artifacts:
   name: site-and-report-files
   base-directory: docs/dist
   secondary-artifacts:
-    artifact1:
+    prod-site:
       files:
-        - *.js
-        - *.css
-        - public/*/**
-      name: prod-deploy-artifact
+        - "*.js"
+        - "*.css"
+        - "public/*/**"
+      name: prod-site-files
       base-directory: docs/dist
 
 cache:
