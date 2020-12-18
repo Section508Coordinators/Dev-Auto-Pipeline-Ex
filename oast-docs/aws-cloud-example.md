@@ -220,3 +220,4 @@ staging and a manual review before deploying to production.
 - Select the Deploy Provider 'S3'
 - Select 'Extract file before deploy'
 - Create the pipeline
+
