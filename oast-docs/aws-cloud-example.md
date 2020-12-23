@@ -221,3 +221,27 @@ staging and a manual review before deploying to production.
 - Select 'Extract file before deploy'
 - Create the pipeline
 
+Everything is working at this point but permissions on our prod bucket
+aren't quite right. I had to add the following permission policy to
+the bucket for it to serve the html site.
+
+``` json
+	{
+    "Version": "2008-10-17",
+    "Id": "temp-oast-ci-cd-example-putlic-cauldron-prod-policy",
+    "Statement": [
+        {
+            "Sid": "temp-oast-ci-cd-example-putlic-cauldron-prod-policy-stm1",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::temp-oast-ci-cd-examples-task1-cauldron-prod/*"
+        }
+    ]
+	}
+```
+
+
+# TODO - notifications and documentation
