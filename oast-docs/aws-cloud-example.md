@@ -244,4 +244,4 @@ the bucket for it to serve the html site.
 ```
 
 
-# TODO - notifications and documentation
+# TODO - Add notifications (stages complete - ready for review) and documentation
