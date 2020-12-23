@@ -10,16 +10,16 @@ const Home = () => (
   <div>
     <h1>Cauldron React</h1>
     <h2>Installation</h2>
-    <h2>Hello there from Github!</h2>
+    <h2>Hello there from a new feature!</h2>
     <Code language="shell">
       {'$ npm install --save @deque/cauldron-react @deque/cauldron-styles'}
     </Code>
-  <h2>Usage</h2>
+    <h2>Usage</h2>
     <div style={divStyle}>
       hello
       <img src="/public/fonts/logo.svg" width="100" />
     </div>
-  
+
     <Code language="javascript">
       {`
 import { Workspace, Button } from '@deque/cauldron-react';
