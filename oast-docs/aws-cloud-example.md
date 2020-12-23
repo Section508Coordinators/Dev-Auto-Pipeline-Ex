@@ -243,5 +243,30 @@ the bucket for it to serve the html site.
 	}
 ```
 
+# Add notifications to the pipeline to receive emails at certain points
+
+- Navigate to CodePipeline, select the pipeline that you would like
+  to add notifications to, and then select the Notify button
+- Select 'Create notification rule'
+- In this case, we'll create a notification for a user to receive when
+  manual review and release to production is required
+- Name the rule 'Review Required'
+- Select 'Full'
+- Select all manual approval actions - 'Failed', 'Needed', 'Succeeded'
+- For targets, select 'Create Target'
+- Make the target type an SNS Topic
+- Name it 'codestar-notifications-temp-oast-ci-cd-example-prod-pipeline-event'
+- Click 'Submit'
+- Navigate to the AWS SNS service console
+- Click on 'Topics'
+- Click on the name of our new
+  codestar-notifications-temp-oast-ci-cd-example-prod-pipeline-event
+  topic
+- Select 'Create Subscription'
+- Select 'Email' as the protocol and select an email address as the endpoint
+- Save
+- The email selected should receive a verification email
+- Confirm the email receipt
+- Done
 
 # TODO - Add notifications (stages complete - ready for review) and documentation
