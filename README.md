@@ -1,5 +1,5 @@
 # Test Automation CI/CD Example: 02
-![CI/CD](cicd-ex2.png)
+![CI/CD Example in AWS and GitHub](cicd-ex2.png)
 ## Accessibility-aware automated CI/CD workflow on GitHub (GitHub Actions) and AWS
 
 > This example uses the Deque Cauldron accessible code pattern library for example code
