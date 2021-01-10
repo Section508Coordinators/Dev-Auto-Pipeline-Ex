@@ -1,10 +1,6 @@
 # CI/CD Accessibility Integration Demo: 01
-### (Based on Deque Cauldron Repo): 01/09/2021
-
-![Accessibility-aware CI Demo Ex 02](https://github.com/akingkci/Dev-Auto-CICD-EX02/workflows/Accessibility-aware%20CI%20Demo%20Ex%2002/badge.svg)
-
-
 > This example is based on the Deque Cauldron accessible code pattern library
+![Accessibility-aware CI Demo Ex 02](https://github.com/akingkci/Dev-Auto-CICD-EX02/workflows/Accessibility-aware%20CI%20Demo%20Ex%2002/badge.svg)
 <hr>
 
 This monorepo contains the following packages:
