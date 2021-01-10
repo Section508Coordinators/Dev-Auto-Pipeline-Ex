@@ -1,7 +1,7 @@
-# Accessibility-aware CI/CD Example: 02
-## Test Automation Server accessibility-aware workflow on GitHub and AWS
+# CI/CD Example: 02
+## Test Automation Server w/accessibility-aware workflow on GitHub and AWS
 
-> This example is based on the Deque Cauldron accessible code pattern library
+> This example uses the Deque Cauldron accessible code pattern library for example code
 
 ![Accessibility-aware CI Demo Ex 02](https://github.com/akingkci/Dev-Auto-CICD-EX02/workflows/Accessibility-aware%20CI%20Demo%20Ex%2002/badge.svg)
 <hr>
