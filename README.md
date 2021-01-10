@@ -1,4 +1,4 @@
-# Test Automation CI/CD Example: 02
+# Test Automation CI/CD Example: 02.
 ![CI/CD Example in AWS and GitHub](cicd-ex2.png)
 ## Accessibility-aware automated CI/CD workflow on GitHub (GitHub Actions) and AWS
 
