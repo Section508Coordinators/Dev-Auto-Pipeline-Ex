@@ -7,9 +7,7 @@
 - Visit the details page for the repository (it's currently empty) and
   view the connection instructions
 - Use the connection instructions that best fit your platform and
-  workflow. For me, it was the Linux SSH instructions
-	- Ensure you're using an IAM user
-	- Navigate to IAM
+  workflow. For me, it was the Linux SSH instructions - Ensure you're using an IAM user - Navigate to IAM
   - Select your user
   - Select security credentials
   - select 'Upload SSH public key'
@@ -19,11 +17,11 @@
   - Go ahead and try to clone the empty repository just to get the url
     added to your 'known_hosts' file
   - Delete the cloned empty repository
-- *Do not* clone the empty repository. Our goal is to push our current
+- _Do not_ clone the empty repository. Our goal is to push our current
   local code repository to CodeCommit.
 - Navigate to your local repository with your projects
 - Use git to add a new remote pointing to your newly created CodeCommit repo
-	https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes
+  https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes
 - Git push to your new remote
 
 ## AWS CodeBuild
@@ -48,30 +46,35 @@
 - View the output log to ensure there are no errors
 - You can also navigate to Cloudwatch, find the log group and stream,
   and view historical build logs there
-- Navigate to the build project and create a build trigger
-	- .......NOTE - it seems that there's no easy way to trigger on
-  commit. It can be set up to be a timed job but not triggered without
-  jumping through hoops involving lamba functions.
- - Went ahead and created a build trigger to run every hour to see how it behaves
- - The trigger always runs based on the schedule and it doesn't bother
-   to detect whether it should run based on code changes
- - Deleted my build trigger
- 
-************ 
-*TODO* Later on I discovered that the best build trigger and
+  <!-- - Navigate to the build project and create a build trigger
+  	- .......NOTE - it seems that there's no easy way to trigger on
+    commit. It can be set up to be a timed job but not triggered without
+    jumping through hoops involving lamba functions.
+- Went ahead and created a build trigger to run every hour to see how it behaves
+- The trigger always runs based on the schedule and it doesn't bother
+  to detect whether it should run based on code changes
+- Deleted my build trigger -->
+
+---
+
+_TODO_ Later on I discovered that the best build trigger and
 deployment method is to use codepipeline. We'll want to revise these directions.
-***********
+
+---
 
 ## Generate a buildspec.yml file to implement the build pipeline
 
 See the example in [buildspec.yml](buildspec.yml)
+
+_NOTE_ this buildspec.yml file already exists in the current repository
+and is working with the pipeline. There is no need to edit or create a new one.
 
 - Commit buildspec.yml and push to the AWS hosted Git develop branch
 - Navigate to CodeBuild->Build Projects, select the previously created
   project and click 'start build'
 - Accept the defaults and click the 'Start Build' button at the bottom
 
-## Create an artifact repository to store build artifacts
+<!-- ## Create an artifact repository to store build artifacts
 
 *TURNS OUT THAT THIS IS NOT THE RIGHT TOOL! Do not follow these steps*
 
@@ -87,9 +90,9 @@ It appears that this particular artifact repository is not for general
 purpose artifacts but is meant to host standardized build packages
 (npm, maven, etc). This is not currently useful for us.
 
-- Delete the repository and domain that you just created
+- Delete the repository and domain that you just created -->
 
-## Enable S3 artifacts on the Build project
+<!-- ## Enable S3 artifacts on the Build project
 
 - Navigate to CodeBuild->Build Projects and edit the project selecting 'artifacts'
 - Select S3
@@ -144,7 +147,7 @@ purpose artifacts but is meant to host standardized build packages
 - Performed another codebuild - it works!
 
 *TODO* in the next section figured out the best way to manage
-deployments. Revise the previous instructions.
+deployments. Revise the previous instructions. -->
 
 # AWS Code Pipeline
 
@@ -162,32 +165,31 @@ deployments. Revise the previous instructions.
 - Select 'Extract file before deploy'
 - Create the pipeline
 
-# Undo our artifact deployment from the CodeBuild section
+<!-- # Undo our artifact deployment from the CodeBuild section
 
 We're undoing our previous deployment method because it's handled by
 Code Pipeline.
 
 - Navigate to CodeBuild -> Projects and edit the Artifacts
   configuration for our project
-- Change the artifact setting to 'No Artifacts' and click 'Update Artifacts'
+- Change the artifact setting to 'No Artifacts' and click 'Update Artifacts' -->
 
 # Implement caching to speed up the build
 
 Added the following to the bottom of the buildspec.yml file
 
-``` yaml
-	cache:
+```yaml
+cache:
   paths:
     - /root/.npm/*/**
     - /root/.cache/yarn/*/**
     - node_modules/*/**
     - packages/react/node_modules/*/**
     - packages/styles/node_modules/*/**
-
 ```
 
 This didn't work. Apparently the codebuild project needs to have the
-artifact configuration changed. 
+artifact configuration changed.
 
 # Update the CodeBuild project to include a local cache artifact
 
@@ -200,9 +202,9 @@ This sped the build up by 2 minutes.
 # Production CI/CD
 
 - Created a 'stable' branch that should only be merged to from a
-stable branch when ready for a release. This will kick off a
-production release CI/CD pipeline that will incorporate a deploy to
-staging and a manual review before deploying to production.
+  stable branch when ready for a release. This will kick off a
+  production release CI/CD pipeline that will incorporate a deploy to
+  staging and a manual review before deploying to production.
 - Created a prod release bucket in S3 to simulate the production site
 
 ## Create the prod pipeline
@@ -225,22 +227,22 @@ Everything is working at this point but permissions on our prod bucket
 aren't quite right. I had to add the following permission policy to
 the bucket for it to serve the html site.
 
-``` json
-	{
-    "Version": "2008-10-17",
-    "Id": "temp-oast-ci-cd-example-putlic-cauldron-prod-policy",
-    "Statement": [
-        {
-            "Sid": "temp-oast-ci-cd-example-putlic-cauldron-prod-policy-stm1",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "*"
-            },
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::temp-oast-ci-cd-examples-task1-cauldron-prod/*"
-        }
-    ]
-	}
+```json
+{
+  "Version": "2008-10-17",
+  "Id": "temp-oast-ci-cd-example-putlic-cauldron-prod-policy",
+  "Statement": [
+    {
+      "Sid": "temp-oast-ci-cd-example-putlic-cauldron-prod-policy-stm1",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::temp-oast-ci-cd-examples-task1-cauldron-prod/*"
+    }
+  ]
+}
 ```
 
 # Add notifications to the pipeline to receive emails at certain points
