@@ -255,13 +255,12 @@ the bucket for it to serve the html site.
 - Select all manual approval actions - 'Failed', 'Needed', 'Succeeded'
 - For targets, select 'Create Target'
 - Make the target type an SNS Topic
-- Name it 'codestar-notifications-temp-oast-ci-cd-example-prod-pipeline-event'
+- Name it 'notification-temp-oast-ci-cd-example-prod-pipeline-review'
 - Click 'Submit'
 - Navigate to the AWS SNS service console
 - Click on 'Topics'
 - Click on the name of our new
-  codestar-notifications-temp-oast-ci-cd-example-prod-pipeline-event
-  topic
+  notification-temp-oast-ci-cd-example-prod-pipeline-review topic
 - Select 'Create Subscription'
 - Select 'Email' as the protocol and select an email address as the endpoint
 - Save
@@ -269,4 +268,4 @@ the bucket for it to serve the html site.
 - Confirm the email receipt
 - Done
 
-# TODO - Add notifications (stages complete - ready for review) and documentation
+# TODO - Go over documentation and clean up
