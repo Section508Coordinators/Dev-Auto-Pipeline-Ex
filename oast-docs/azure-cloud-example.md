@@ -63,9 +63,7 @@ that will be created in the next section.
 
 1. Click “Pipelines” → “New Pipeline”
 2. Select the source and branch of your repository
-3. Select the “Starter Pipeline”, this will help start with a minimal pipeline
-   that you can customize to build and deploy your code.
-4. Use the following YAML code:
+3. For the review page - click the "down" arrow beside run and select "Save"
 
 ### view the pipeline For the “develop” branch:
 
@@ -74,58 +72,6 @@ Ensure you're changed to the develop branch and view the code at <../azure-pipel
 ### view the pipeline For the “stable” branch:
 
 Ensure you're changed to the develop branch and view the code at <../azure-pipelines.yml>
-
-```sh
-trigger:
- branches:
-   include:
-     - stable
-
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Variables'
-
-- script: |
-    npm install --g yarn
-    npm install --g lerna
-    npm install --g typescript
-    npm install
-    npx lerna bootstrap
-    NODE_ENV=production yarn --cwd=packages/styles build
-    NODE_ENV=production yarn --cwd=packages/react build
-    yarn build
-  displayName: 'Install Dependencies & Build'
-
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Setup pa11y'
-
-- script: |
-    yarn dev &
-    sleep 5 && yarn test-pa11y-axe
-    yarn generate-pa11y-axe-report
-    yarn print-pa11y-axe-cli-results
-    yarn test-pa11y-htmlcs
-    yarn generate-pa11y-htmlcs-report
-    yarn print-pa11y-htmlcs-cli-results
-
-
-- task: ArchiveFiles@2
-  displayName: 'Archive Step'
-  inputs:
-    rootFolderOrFile: '$(Build.SourcesDirectory)/docs/dist'
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
-
-- task: PublishBuildArtifacts@1
-```
 
 This will produce a build (npm install, yarn build, etc.) and will produce the
 artefacts. _Source Folder_ reads from your build directory
