@@ -1,0 +1,49 @@
+trigger:
+ branches:
+   include:
+     - develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Variables'
+
+- script: |
+    npm install --g yarn
+    npm install --g lerna
+    npm install --g typescript
+    npm install
+    npx lerna bootstrap
+    NODE_ENV=production yarn --cwd=packages/styles build
+    NODE_ENV=production yarn --cwd=packages/react build
+    yarn build
+  displayName: 'Install Dependencies & Build'
+
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Setup pa11y'
+
+- script: |
+    yarn dev &
+    sleep 5 && yarn test-pa11y-axe
+    yarn generate-pa11y-axe-report
+    yarn print-pa11y-axe-cli-results
+    yarn test-pa11y-htmlcs
+    yarn generate-pa11y-htmlcs-report
+    yarn print-pa11y-htmlcs-cli-results
+
+
+- task: ArchiveFiles@2
+  displayName: 'Archive Step'
+  inputs:
+    rootFolderOrFile: '$(Build.SourcesDirectory)/docs/dist'
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
+- task: PublishBuildArtifacts@1
