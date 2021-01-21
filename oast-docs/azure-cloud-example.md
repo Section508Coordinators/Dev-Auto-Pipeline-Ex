@@ -64,6 +64,11 @@ that will be created in the next section.
 1. Click “Pipelines” → “New Pipeline”
 2. Select the source and branch of your repository
 3. For the review page - click the "down" arrow beside run and select "Save"
+   after noting the selected branch in the yaml
+4. Click on "Pipelines" and then select "Rename/move" in the ellipsis to the
+   right. Add the branch name to the pipeline.
+   
+Repeat the previous process for the other branch (Either "stable" or "develop")
 
 ### view the pipeline For the “develop” branch:
 
