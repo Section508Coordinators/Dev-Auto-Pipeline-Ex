@@ -73,6 +73,8 @@ Ensure you're changed to the develop branch and view the code at <../azure-pipel
 
 ### view the pipeline For the “stable” branch:
 
+Ensure you're changed to the develop branch and view the code at <../azure-pipelines.yml>
+
 ```sh
 trigger:
  branches:
