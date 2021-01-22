@@ -91,9 +91,9 @@ pipline publishes the build artifact.
 
 With the build pipeline complete and a zip archive of our build directory being
 produced, we need to release it to the Azure Storage we previously created. To
-accomplish the upload, we’ll use the Azure CLI in the release pipeline as that’s
-what I’ve had the best results with. This step has to be done twice, one for
-Develop Release and a second time for Stable Release.
+accomplish the upload, we’ll use the Azure CLI in the release pipeline. This
+step has to be done twice, one for Develop Release and a second time for Stable
+Release.
 
 1. From the left sidebar, select “Pipelines” → “Releases”
 2. Click “Create release”
@@ -112,12 +112,12 @@ Develop Release and a second time for Stable Release.
    <./azure-2.png>
 8. Under your stage name, click “1 job, 0 task”
 9. Click on “Agent job” and change the agent pool to your preferred choice
-   (Windows/Linux) and click Save.
+   (Windows/Linux) and click Save. (recommend using ubuntu 18 or 20)
 10. Next to the agent job task, click “+” to add a new task to the release
     pipeline and select the “Extract Files” task.
 11. Configure the task so the “Archive file patterns” match what we’ve produced
     in the build pipeline \*_/_.zip and set the destination folder to
-    `$(System.DefaultWorkingDirectory./$(Build.BuildId)`.
+    `$(System.DefaultWorkingDirectory)/$(Build.BuildId)`.
 12. Add a new task to the release pipeline and select “Azure CLI” from the list.
     Select the Script Type → Shell and Script Location → Inline Script and input the
     following script: `az storage blob upload-batch --account-name $name --account-key $key --destination '$web' --source ./dist`
