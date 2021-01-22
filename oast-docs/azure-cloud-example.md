@@ -73,11 +73,11 @@ references to "Develop" with "Stable"
 
 ### view the pipeline For the “develop” branch:
 
-Ensure you're changed to the develop branch and view the code at <../azure-pipelines.yml>
+Ensure you're changed to the develop branch and view the code at [../azure-pipelines-devlop.yml](../azure-pipelines-develop.yml)
 
 ### view the pipeline For the “stable” branch:
 
-Ensure you're changed to the develop branch and view the code at <../azure-pipelines.yml>
+Ensure you're changed to the develop branch and view the code at [../azure-pipelines-stable.yml](../azure-pipelines-stable.yml)
 
 This will produce a build (npm install, yarn build, etc.) and will produce the
 artifacts. _Source Folder_ reads from your build directory
@@ -107,9 +107,9 @@ Release.
    Build branch filters to Type → Include and Build branch → develop. In order
    to release only when the push comes from develop branch. Also make sure under
    “Stages” the trigger is set to “After release”.
-   <./azure-1.png>
+   [./azure-1.png](./azure-1.png)
 7. For “Stable Release” the Pre-deployment conditions must be set to Manual Only
-   <./azure-2.png>
+   [./azure-2.png](./azure-2.png)
 8. Under your stage name, click “1 job, 0 task”
 9. Click on “Agent job” and change the agent pool to your preferred choice
    (Windows/Linux) and click Save. (recommend using ubuntu 18 or 20)
@@ -124,7 +124,7 @@ Release.
 13. Click “Environment Variables” → create a variable name with the name of your
     storage account, and create variable key with the “Key #1” that was copied
     when the new storage account was created.
-    <./azure-3.png>
+    [./azure-3.png](./azure-3.png)
 14. Set the working directory to
     `$(System.DefaultWorkingDirectory)/$(Build.BuildId)`.
 15. Save the pipeline and create a new release to manually trigger the pipeline.
