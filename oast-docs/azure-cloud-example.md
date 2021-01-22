@@ -62,13 +62,14 @@ which will produce a .zip artifact that will be used by the Release pipeline
 that will be created in the next section.
 
 1. Click “Pipelines” → “New Pipeline”
-2. Select the source and branch of your repository
-3. For the review page - click the "down" arrow beside run and select "Save"
-   after noting the selected branch in the yaml
-4. Click on "Pipelines" and then select "Rename/move" in the ellipsis to the
-   right. Add the branch name to the pipeline.
-   
-Repeat the previous process for the other branch (Either "stable" or "develop")
+2. Select your previously created repository
+3. On the Configure your pipeline page - select the 'develop branch' and select /azure-pipeline-develop.yml
+4. Click the down arrow on the "Run" button and select "Save"
+5. Rename the pipeline and prefix "Develop" to the name to differentiate from
+   the stable pipeline we're about to add.
+
+Repeat the previous process for the other branch "Stable" replacing any
+references to "Develop" with "Stable"
 
 ### view the pipeline For the “develop” branch:
 
@@ -79,12 +80,12 @@ Ensure you're changed to the develop branch and view the code at <../azure-pipel
 Ensure you're changed to the develop branch and view the code at <../azure-pipelines.yml>
 
 This will produce a build (npm install, yarn build, etc.) and will produce the
-artefacts. _Source Folder_ reads from your build directory
+artifacts. _Source Folder_ reads from your build directory
 `($(Build.SourcesDirectory)/docs/dist)` and set the _Target Folder_ to
 `$(Build.ArtifactStagingDirectory)`. This task also is configured so the target
-is your build directory and output to
-`$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip`. Lastly, it publish the
-build artefact.
+is your build directory and is output to
+`$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip`. The last step of the
+pipline publishes the build artifact.
 
 # Create the Release Pipeline
 
