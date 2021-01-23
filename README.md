@@ -75,12 +75,6 @@ aware of this Git repository. Also, the Jenkins instance needs to be
 configured with appropriate plugins (Git, AWS) and credentials that
 are referenced from within the Jenkinsfile for deployment to AWS S3
 
-NOTE - this may be as simple as installing the Git and AWS plugins, creating a
-project, pointing to a Git branch, and adding S3 secrets that will be picked up
-by Jenkins during the Docker build.
-
-TODO - enhance this Jenkins documentation
-
 The Github actions pipeline is defined within
 .github/workflows/node.js.yml. This pipeline runs the same basic steps
 as the Jenkins pipeline. The flow is to check out the latest code,
