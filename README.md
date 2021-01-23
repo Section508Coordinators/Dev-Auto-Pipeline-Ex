@@ -32,6 +32,7 @@ modify aspects of pipelines including build labels.
 - [From scratch setup of Github with Github Actions and S3 deployment and hosting](oast-docs/ci-cd-setup-from-scratch.md)
 - [Updating build label steps for the various pipelines](oast-docs/updating-ci-build-labels.md)
 - [Azure Cloud CI/CD setup and example](oast-docs/azure-cloud-example.md)
+- [Jenkins setup and example](oast-docs/jenkins-setup.md)
 
 # Note - this is not the official Cauldron repository
 
