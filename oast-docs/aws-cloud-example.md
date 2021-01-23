@@ -55,12 +55,12 @@
   to detect whether it should run based on code changes
 - Deleted my build trigger -->
 
----
+<!-- --- -->
 
-_TODO_ Later on I discovered that the best build trigger and
-deployment method is to use codepipeline. We'll want to revise these directions.
+<!-- _TODO_ Later on I discovered that the best build trigger and -->
+<!-- deployment method is to use codepipeline. We'll want to revise these directions. -->
 
----
+<!-- --- -->
 
 ## Generate a buildspec.yml file to implement the build pipeline
 
@@ -69,10 +69,10 @@ See the example in [buildspec.yml](buildspec.yml)
 _NOTE_ this buildspec.yml file already exists in the current repository
 and is working with the pipeline. There is no need to edit or create a new one.
 
-- Commit buildspec.yml and push to the AWS hosted Git develop branch
-- Navigate to CodeBuild->Build Projects, select the previously created
-  project and click 'start build'
-- Accept the defaults and click the 'Start Build' button at the bottom
+<!-- - Commit buildspec.yml and push to the AWS hosted Git develop branch -->
+<!-- - Navigate to CodeBuild->Build Projects, select the previously created -->
+<!--   project and click 'start build' -->
+<!-- - Accept the defaults and click the 'Start Build' button at the bottom -->
 
 <!-- ## Create an artifact repository to store build artifacts
 
@@ -174,19 +174,19 @@ Code Pipeline.
   configuration for our project
 - Change the artifact setting to 'No Artifacts' and click 'Update Artifacts' -->
 
-# Implement caching to speed up the build
+<!-- # Implement caching to speed up the build -->
 
-Added the following to the bottom of the buildspec.yml file
+<!-- Added the following to the bottom of the buildspec.yml file -->
 
-```yaml
-cache:
-  paths:
-    - /root/.npm/*/**
-    - /root/.cache/yarn/*/**
-    - node_modules/*/**
-    - packages/react/node_modules/*/**
-    - packages/styles/node_modules/*/**
-```
+<!-- ```yaml -->
+<!-- cache: -->
+<!--   paths: -->
+<!--     - /root/.npm/*/** -->
+<!--     - /root/.cache/yarn/*/** -->
+<!--     - node_modules/*/** -->
+<!--     - packages/react/node_modules/*/** -->
+<!--     - packages/styles/node_modules/*/** -->
+<!-- ``` -->
 
 This didn't work. Apparently the codebuild project needs to have the
 artifact configuration changed.
@@ -269,5 +269,3 @@ the bucket for it to serve the html site.
 - The email selected should receive a verification email
 - Confirm the email receipt
 - Done
-
-# TODO - Go over documentation and clean up
