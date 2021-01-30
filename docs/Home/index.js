@@ -29,7 +29,7 @@ import '@deque/cauldron-react/lib/cauldron.css';
 const Foo = () => (
   <Workspace>
     <h1>Hello world</h1>
-    <Button>Cauldron is awesome!</Button>
+    <Button>Cauldron is awesome!!!</Button>
   </Workspace>
 );
       `}
