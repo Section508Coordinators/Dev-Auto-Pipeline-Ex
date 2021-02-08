@@ -24,7 +24,7 @@ a) In the command line, change the directory to <Installation Directory> and run
 
 After succesfully starting Bamboo, you will find it online at http://localhost:8085/
 
-[Bamboo startup screen](./bamboo/bamboo_installation_1.png)
+![Bamboo startup screen](./bamboo/bamboo_installation_1.png)
 
 # Setup Bamboo
 
@@ -39,13 +39,13 @@ For simplicity we are going to select "Express Installation"
 Please enter the details of the administrator user for the bamboo installation
 username, password, fullname and email.
 
-[Bamboo user creation](./bamboo/bamboo_installation_2.png)
+![Bamboo user creation](./bamboo/bamboo_installation_2.png)
 
 # Configure Plan
 
 A plan in bamboo defines everything about the build process.
 
-[Create a Bamboo plan](./bamboo/bamboo_installation_3.png)
+![Create a Bamboo plan](./bamboo/bamboo_installation_3.png)
 
 Setup the following:
 Project Name, Project Key, Plan Name, Plan Key, Repository Host, for this we are going to "Link new repository"
@@ -53,11 +53,11 @@ Project Name, Project Key, Plan Name, Plan Key, Repository Host, for this we are
 **Username:** {{Github Username}}
 **Personal Access token:** {{Github Personal Token}}
 
-[Github Access Token Creation](./bamboo/bamboo_installation_4.png)
+![Github Access Token Creation](./bamboo/bamboo_installation_4.png)
 
 **Repository:** Click "Load Repositories" then select the repository you want to use for your Plan.
 
-[Repository Selection](./bamboo/bamboo_installation_5.png)
+![Repository Selection](./bamboo/bamboo_installation_5.png)
 
 **Branch:** Select the branch you want to check out your code from.
 Click "Configure Plan"
@@ -86,7 +86,7 @@ yarn generate-pa11y-htmlcs-report
 yarn print-pa11y-htmlcs-cli-results
 ```
 
-[Script Configuration](./bamboo/bamboo_installation_6.png)
+![Script Configuration](./bamboo/bamboo_installation_6.png)
 
 # Amazon S3 Object
 
@@ -103,7 +103,7 @@ Select "Use default excludes when selecting files"
 Target Bucket Name: bamboo-static-website
 AWS Security Credentials -> Source "Inline" -> Access Key ID and Access Secret from AWS IAM.
 
-[S3 Deployment](./bamboo/bamboo_installation_7.png)
+![S3 Deployment](./bamboo/bamboo_installation_7.png)
 
 # Setup Artifacts
 
@@ -112,7 +112,7 @@ Name: ArchiveFiles
 Location: \${bamboo.working.directory}/docs/dist
 Copy pattern: \*
 
-[Artifact Setup](./bamboo/bamboo_installation_8.png)
+![Artifact Setup](./bamboo/bamboo_installation_8.png)
 
 # Run Plan
 
@@ -121,14 +121,14 @@ The pipeline will generate the artifact and upload the directory into the S3 buc
 
 # Results
 
-[S3 Bucket](./bamboo/bamboo_installation_9.png)
+![S3 Bucket](./bamboo/bamboo_installation_9.png)
 
-[Site](./bamboo/bamboo_installation_10.png)
+![Site](./bamboo/bamboo_installation_10.png)
 
-[HTMLCS Report](./bamboo/bamboo_installation_11.png)
+![HTMLCS Report](./bamboo/bamboo_installation_11.png)
 
-[HTMLCS Report](./bamboo/bamboo_installation_11.png)
+![HTMLCS Report](./bamboo/bamboo_installation_11.png)
 
-[Axe Report](./bamboo/bamboo_installation_12.png)
+![Axe Report](./bamboo/bamboo_installation_12.png)
 
 <!-- **Important** package.json change all the yarn commands to bash in order to run. -->
