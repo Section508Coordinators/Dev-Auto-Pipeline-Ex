@@ -26,7 +26,7 @@ Local configuration and setup directions can be found below.
 
 In addition there is documentation in the [oast-docs](oast-docs) folder
 describing ci-cd configurations and other documentation about how to
-modify aspects of pipelines including build labels.
+modify aspects of pipelines including build labels..
 
 - [AWS Cloud CI/CD setup and example](oast-docs/aws-cloud-example.md)
 - [From scratch setup of Github with Github Actions and S3 deployment and hosting](oast-docs/ci-cd-setup-from-scratch.md)
