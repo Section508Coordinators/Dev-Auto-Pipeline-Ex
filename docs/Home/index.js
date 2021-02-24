@@ -8,7 +8,7 @@ const divStyle = {
 
 const Home = () => (
   <div>
-    <h1>Cauldron React</h1>
+    <h1>Sample Page: Cauldron React [Before changes]</h1>
     <h2>Installation</h2>
     <h2>Hello there!</h2>
     <Code language="shell">
@@ -28,8 +28,8 @@ import '@deque/cauldron-react/lib/cauldron.css';
 
 const Foo = () => (
   <Workspace>
-    <h1>Hello world: 123!</h1>
-    <Button>Cauldron is awesome!!!</Button>
+    <h1>Hello world</h1>
+    <Button>Cauldron is awesome!</Button>
   </Workspace>
 );
       `}
