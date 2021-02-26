@@ -8,15 +8,14 @@ const divStyle = {
 
 const Home = () => (
   <div>
-    <h1>Cauldron React</h1>
+    <h1>Sample Page: Cauldron React [After changes]</h1>
     <h2>Installation</h2>
-    <h2>Hello there from a new feature2!</h2>
+    <h2>Hello there!</h2>
     <Code language="shell">
       {'$ npm install --save @deque/cauldron-react @deque/cauldron-styles'}
     </Code>
     <h2>Usage</h2>
     <div style={divStyle}>
-      hello
       <img src="/public/fonts/logo.svg" width="100" />
     </div>
 
