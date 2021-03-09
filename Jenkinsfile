@@ -1,9 +1,11 @@
-// prevent blue ocean from triggering a build on every branch when importing the repository
-if (currentBuild.rawBuild.getCauses().toString().contains('BranchIndexingCause')) {
-  print "INFO: Build skipped due to trigger being Branch Indexing"
-  currentBuild.result = 'Skipping Index Build'
-  return
-}
+// // Prevent blue ocean from triggering a build on every branch when importing the repository.
+// // The following approach requires extra permissions to be configured on the project
+// // in order to use.
+// if (currentBuild.rawBuild.getCauses().toString().contains('BranchIndexingCause')) {
+//   print "INFO: Build skipped due to trigger being Branch Indexing"
+//   currentBuild.result = 'Skipping Index Build'
+//   return
+// }
 
 pipeline {
   agent {
@@ -22,6 +24,26 @@ pipeline {
     // AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
     // AWS_REGION: 'us-east-1'
   }
+
+  triggers { pollSCM('* * * * *') }
+
+  stages {
+    // the following filter assists with preventing a Jenkins Blue Ocean project import from
+    // building all branches simultaneously on import.
+
+    stage('Build Filter') {
+      steps {
+        script{
+          if (BUILD_NUMBER == '1') {
+            echo 'Fist Build...'
+            error('Stop')
+          } else {
+            echo "Skip to steps on branch = ${BRANCH_NAME}"
+          }
+        }
+      }
+    }
+
   stages {
     stage('Install all development dependencies and tools') {
       steps {
