@@ -44,7 +44,6 @@ pipeline {
       }
     }
 
-  stages {
     stage('Install all development dependencies and tools') {
       steps {
         // sh 'npm install yarn'
