@@ -25,7 +25,8 @@ pipeline {
     // AWS_REGION: 'us-east-1'
   }
 
-  triggers { pollSCM('* * * * *') }
+  // poll every 5 minutes with a hashing factor to prevent simultaneous execution
+  triggers { pollSCM('H/5 * * * *') }
 
   stages {
     // the following filter assists with preventing a Jenkins Blue Ocean project import from
