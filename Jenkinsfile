@@ -1,3 +1,10 @@
+// prevent blue ocean from triggering a build on every branch when importing the repository
+if (currentBuild.rawBuild.getCauses().toString().contains('BranchIndexingCause')) {
+  print "INFO: Build skipped due to trigger being Branch Indexing"
+  currentBuild.result = 'Skipping Index Build'
+  return
+}
+
 pipeline {
   agent {
     docker {
