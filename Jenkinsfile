@@ -91,8 +91,8 @@ pipeline {
 
     stage('Publish the site and reports to S3') {
       steps {
-        withAWS(credentials:'jenkins-temp-oast-ci-cd-examples-task1-cauldron-s3', region: "us-east-1") {
-          s3Upload(file:'docs/dist', bucket:'temp-oast-ci-cd-examples-task1-cauldron', acl:'PublicRead')
+        withAWS(credentials:'aws_kci', region: "us-east-1") {
+          s3Upload(file:'docs/dist', bucket:'s3.kci-01', acl:'PublicRead')
         }
       }
     }
