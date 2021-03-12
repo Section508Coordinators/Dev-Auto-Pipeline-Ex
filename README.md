@@ -4,13 +4,13 @@
 
 ## Accessibility-aware automated CI/CD workflow on GitHub (GitHub Actions) and AWS
 
-> This example uses the Deque Cauldron accessible code pattern library for example code <TEST>
+> This example uses the Deque Cauldron accessible code pattern library for example code
 
 ![Accessibility-aware CI Demo Ex 02](https://github.com/akingkci/Dev-Auto-CICD-EX02/workflows/Accessibility-aware%20CI%20Demo%20Ex%2002/badge.svg)
 
 <hr>
 
-This monorepo contains the following packages: TEST
+This monorepo contains the following packages: TEST-OFF 03:15p
 
 - cauldron-styles ([`packages/styles`](packages/style/README.md))
 - cauldron-react ([`packages/react`](packages/react/README.md))
