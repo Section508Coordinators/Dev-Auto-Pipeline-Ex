@@ -18,6 +18,7 @@ pipeline {
       // args '-v /srv/puppeteer/.npm:/.npm'
     }
   }
+
   environment {
     HOME = '.'
     // AWS_S3_BUCKET = credentials('jenkins-aws-s3-bucket')
