@@ -20,10 +20,10 @@ pipeline {
   }
   environment {
     HOME = '.'
-    // AWS_S3_BUCKET = credentials('jenkins-aws-s3-bucket')
-    // AWS_ACCESS_KEY_ID = credentials('jenkins-aws-access-key-id')
-    // AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
-    // AWS_REGION: 'us-east-1'
+    AWS_S3_BUCKET = credentials('jenkins-aws-s3-bucket')
+    AWS_ACCESS_KEY_ID = credentials('jenkins-aws-access-key-id')
+    AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
+    AWS_REGION: 'us-east-1'
   }
 
   // poll every 5 minutes with a hashing factor to prevent simultaneous execution
