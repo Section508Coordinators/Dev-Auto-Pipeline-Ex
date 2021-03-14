@@ -8,7 +8,7 @@ const divStyle = {
 
 const Home = () => (
   <div>
-    <h1>Sample Page: Cauldron React [AFTER, AFTER changes]</h1>
+    <h1>Sample Page: Cauldron React [BEFORE changes]</h1>
     <h2>Installation</h2>
     <h2>Hello there!</h2>
     <Code language="shell">
