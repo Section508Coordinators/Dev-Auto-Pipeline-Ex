@@ -1,23 +1,14 @@
 import React from 'react';
 import { Code } from '@deque/cauldron-react';
 
-const divStyle = {
-  color: 'blue',
-  background: '#000'
-};
-
 const Home = () => (
   <div>
-    <h1>Cauldron React.</h1>
+    <h1>Cauldron React</h1>
     <h2>Installation</h2>
-    <Code language="shell">
+    <Code>
       {'$ npm install --save @deque/cauldron-react @deque/cauldron-styles'}
     </Code>
     <h2>Usage</h2>
-    <div style={divStyle}>
-      <img src="/public/fonts/logo.svg" width="100" />
-    </div>
-
     <Code language="javascript">
       {`
 import { Workspace, Button } from '@deque/cauldron-react';
@@ -33,9 +24,7 @@ const Foo = () => (
       `}
     </Code>
   </div>
-  <br>
-  <br>
-  <p>First: <input type="text"></p>
+  <p>First: <input type='text'></p>
 );
 
 export default Home;
