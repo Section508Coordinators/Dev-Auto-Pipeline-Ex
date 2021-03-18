@@ -27,7 +27,7 @@ pipeline {
   }
 
   // poll every 5 minutes with a hashing factor to prevent simultaneous execution
-  triggers { pollSCM('H/5 * * * *') }
+  triggers { pollSCM('H/1 * * * *') }
 
   stages {
     // the following filter assists with preventing a Jenkins Blue Ocean project import from
