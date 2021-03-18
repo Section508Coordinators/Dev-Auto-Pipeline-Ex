@@ -48,10 +48,6 @@ const Foo = () => (
         </label>
       </form>  
   
-  
-  
-  
-  
 );
 
 export default Home;
