@@ -33,6 +33,9 @@ const Foo = () => (
       `}
     </Code>
   </div>
+  <br>
+  <br>
+  <p>First: <input type="text"></p>
 );
 
 export default Home;
