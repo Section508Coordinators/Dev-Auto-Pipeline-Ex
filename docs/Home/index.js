@@ -24,7 +24,7 @@ const Foo = () => (
       `}
     </Code>
   </div>
-  <p>First: <input type='text'></p>
+  <p>First: <input type='text'>-</p>
 );
 
 export default Home;
