@@ -10,7 +10,7 @@
 
 <hr>
 
-This monorepo contains the following packages: Change on 6:00p
+This monorepo contains the following packages
 
 - cauldron-styles ([`packages/styles`](packages/style/README.md))
 - cauldron-react ([`packages/react`](packages/react/README.md))
