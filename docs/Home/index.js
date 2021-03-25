@@ -3,7 +3,7 @@ import { Code } from '@deque/cauldron-react';
 
 const Home = () => (
   <div>
-    <h1>Cauldron React.</h1>
+    <h1>Cauldron React - Demo page</h1>
     <h2>Installation</h2>
     <h3></h3>
     <Code>
