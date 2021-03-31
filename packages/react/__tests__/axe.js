@@ -4,6 +4,7 @@ const axe = configureAxe({
   rules: {
     'accesskeys': { enabled: false },
     'empty-heading': { enabled: false },
+    'scrollable-region-focusable': { enabled: false },
     'area-alt': { enabled: false },
     'aria-allowed-role': { enabled: false },
     'aria-hidden-body': { enabled: false },
