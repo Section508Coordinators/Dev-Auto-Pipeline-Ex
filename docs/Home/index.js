@@ -3,9 +3,8 @@ import { Code } from '@deque/cauldron-react';
 
 const Home = () => (
   <div>
-    <h1>Cauldron React: Updated 3/28 02:29p</h1>
+    <h1>Cauldron React</h1>
     <h2>Installation</h2>
-    <h3></h3>
     <Code>
       {'$ npm install --save @deque/cauldron-react @deque/cauldron-styles'}
     </Code>
