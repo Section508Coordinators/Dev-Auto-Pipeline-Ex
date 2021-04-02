@@ -10,6 +10,7 @@
     ],
     "ignore": [
       "accesskeys",
+      "scrollable-region-focusable",
       "area-alt",
       "aria-allowed-role",
       "aria-hidden-body",
