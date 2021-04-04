@@ -79,6 +79,13 @@
   "urls": [
     "http://localhost:8000/",
     "http://localhost:8000/components/Alert",
+    {
+      "url": "http://localhost:8000/components/Alert",
+      "actions": [
+        "click element button[type=button]",
+        "wait for element div.Dialog--show to be visible"
+      ]
+    },
     "http://localhost:8000/components/Button",
     "http://localhost:8000/components/Card",
     "http://localhost:8000/components/Checkbox",
