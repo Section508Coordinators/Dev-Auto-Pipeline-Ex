@@ -73,30 +73,29 @@ pipeline {
       }
     }
     stage('3-Build styles and UI Components') {
-      
+      steps {
         script{
           echo ' '
           echo '*******************************************************************************'
           echo '*      STAGE 3: Build the styles project and REACT components project         *'
           echo '*******************************************************************************'
           echo ' '
-        }             
+        }                     
+      }
       
       steps {
         sh 'NODE_ENV=production yarn --cwd=packages/styles build'
         sh 'NODE_ENV=production yarn --cwd=packages/react build'
       }
     }
-    stage('4-Perform Unit Testing') {
-      
+    stage('4-Perform Unit Testing') {      
         script{
           echo ' '
           echo '***********************************************************************************************'
           echo '* STAGE 4: Execute traditional and accessibility unit tests against UI component code library *'
           echo '***********************************************************************************************'
           echo ' '
-        }
-                   
+        }      
       steps {
         sh 'yarn --cwd=packages/react test'
       }
@@ -119,6 +118,8 @@ pipeline {
       }
     }
     stage('6-HTMLCS integration testing and reporting') {
+      steps {
+        
         script{
           echo ' '
           echo '***********************************************************************************************************'
@@ -126,8 +127,7 @@ pipeline {
           echo '***********************************************************************************************************'
           echo ' '
         }      
-      
-      steps {
+        
         sh 'yarn dev &'
         sh 'wait-for-it.sh --timeout=30 localhost:8000 && yarn test-pa11y-htmlcs'
         sh 'yarn generate-pa11y-htmlcs-report'
@@ -136,6 +136,8 @@ pipeline {
     }
 
     stage('7-{Prepare deployment to Staging') {
+      steps {
+        
         script{
           echo ' '
           echo '***********************************************************************************************************'
@@ -143,13 +145,14 @@ pipeline {
           echo '***********************************************************************************************************'
           echo ' '
         }
-     
-      steps {
+             
         sh 'yarn build'
       }
     }
 
     stage('8-Publish the site and reports to S3') {
+      steps {
+        
         script{
           echo ' '
           echo '***********************************************************************************************************'
@@ -158,7 +161,6 @@ pipeline {
           echo ' '
         }
       
-      steps {
         withAWS(credentials:'aws_kci', region: "us-east-1") {
           s3Upload(file:'docs/dist', bucket:'s3.kci-01', acl:'PublicRead')
         }
