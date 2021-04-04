@@ -136,7 +136,7 @@ class App extends Component {
               <TopBarTrigger onClick={this.onTriggerClick}>
                 <button
                   tabIndex={-1}
-                  aria-label=""   
+                    
                   aria-haspopup="true"
                   ref={this.topBarTrigger}
                   aria-expanded={show}
