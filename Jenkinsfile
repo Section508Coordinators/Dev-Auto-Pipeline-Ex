@@ -136,7 +136,7 @@ pipeline {
       }
     }
 
-    stage('7-{Prepare deployment to Staging') {
+    stage('7-Prepare deployment to Staging') {
       steps {
         
         script{
