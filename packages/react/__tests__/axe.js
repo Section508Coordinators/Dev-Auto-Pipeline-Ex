@@ -67,7 +67,7 @@ const axe = configureAxe({
 		 	'heading-order': {enabled: false},
 		 	'hidden-content': {enabled: false},
 		 	'html-xml-lang-mismatch': {enabled: false},		 	
-		 	'img-redundant-alt': {enabled: false},
+//  	'img-redundant-alt': {enabled: false}, //-rule deprecated
 		 	'label-content-name-mismatch': {enabled: false},
 		 	'label-title-only': {enabled: false},		 	
 		 	'landmark-banner-is-top-level': {enabled: false},
