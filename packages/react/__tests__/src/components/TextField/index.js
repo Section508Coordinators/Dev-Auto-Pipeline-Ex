@@ -6,7 +6,7 @@ import axe from '../../../axe';
 test('controlled field', () => {
   let input;
   const field = mount(
-    <TextField Label="Fred" value="" fieldRef={el => (input = el)} />
+    <TextField label="Fred" value="" fieldRef={el => (input = el)} />
   );
 
   expect(input.value).toBe('');
