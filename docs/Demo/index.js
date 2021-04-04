@@ -56,9 +56,9 @@ class Demo extends Component {
           <table>
             <thead>
               <tr>
-                <th>Name</th>
+                <td>Name</td>
                 <th>Type</th>
-                <th>Required</th>
+                <td>Required</td>
                 <th>Description</th>
                 <th>Default</th>
               </tr>
