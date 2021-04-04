@@ -72,8 +72,9 @@ pipeline {
         sh 'npx lerna bootstrap'
       }
     }
-    stage('3-Build styles and UI Components') {
+    stage('3-Build styles and UI Components') {              
       steps {
+        
         script{
           echo ' '
           echo '*******************************************************************************'
@@ -81,22 +82,22 @@ pipeline {
           echo '*******************************************************************************'
           echo ' '
         }                     
-      }
-      
-      steps {
+        
         sh 'NODE_ENV=production yarn --cwd=packages/styles build'
         sh 'NODE_ENV=production yarn --cwd=packages/react build'
       }
     }
     stage('4-Perform Unit Testing') {      
+      steps {
+        
         script{
           echo ' '
           echo '***********************************************************************************************'
           echo '* STAGE 4: Execute traditional and accessibility unit tests against UI component code library *'
           echo '***********************************************************************************************'
           echo ' '
-        }      
-      steps {
+        } 
+        
         sh 'yarn --cwd=packages/react test'
       }
     }
