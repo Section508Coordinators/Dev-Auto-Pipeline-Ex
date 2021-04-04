@@ -157,7 +157,7 @@ pipeline {
         script{
           echo ' '
           echo '***********************************************************************************************************'
-          echo '*              STAGE 8: Push current code and reporting to AWS Staging (Amazon S3 Object                  *'
+          echo '*              STAGE 8: Push current code and reporting to AWS Staging (Amazon S3 Object)                 *'
           echo '***********************************************************************************************************'
           echo ' '
         }
