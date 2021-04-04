@@ -33,8 +33,13 @@ pipeline {
     // the following filter assists with preventing a Jenkins Blue Ocean project import from
     // building all branches simultaneously on import.
 
-    stage('Build Filter') {
+    stage('1-Build Filter') {
       steps {
+              sh "bash -c "echo ' '"
+              sh "bash -c "echo '*******************************************************************************'"
+              sh "bash -c "echo '*              STAGE: Build Filter to control branch execution                 *'"
+              sh "bash -c "echo '*******************************************************************************'"
+              sh "bash -c "echo ' '"        
         script{
           if (BUILD_NUMBER == '1') {
             echo 'Fist Build...'
@@ -46,7 +51,7 @@ pipeline {
       }
     }
 
-    stage('Install all development dependencies and tools') {
+    stage('2-Install all development dependencies and tools') {
       steps {
         // sh 'npm install yarn'
         // sh './node_modules/.bin/yarn'
