@@ -39,7 +39,6 @@
 	'heading-order',
 	'hidden-content',
 	'html-xml-lang-mismatch',		 	
-	'img-redundant-alt',
 	'label-content-name-mismatch',
 	'label-title-only',		 	
 	'landmark-banner-is-top-level',
