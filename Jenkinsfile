@@ -33,15 +33,15 @@ pipeline {
     // the following filter assists with preventing a Jenkins Blue Ocean project import from
     // building all branches simultaneously on import.
 
-    stage('1-Build Filter') {
+    stage('1-Execute build filter') {
       steps {
         
         script{
-          echo ' \r'
-          echo '*******************************************************************************\r'
-          echo '*             STAGE: Build Filter to control branch execution                 *\r'
-          echo '*******************************************************************************\r'
-          echo ' \r'
+          echo ' '
+          echo '*******************************************************************************'
+          echo '*            STAGE 1: Build Filter to control branch execution                *'
+          echo '*******************************************************************************'
+          echo ' '
         }
         
         script{
@@ -55,34 +55,78 @@ pipeline {
       }
     }
 
-    stage('2-Install all development dependencies and tools') {
+    stage('2-Install dependencies and tools') {
       steps {
         // sh 'npm install yarn'
         // sh './node_modules/.bin/yarn'
+        
+        script{
+          echo ' '
+          echo '*******************************************************************************'
+          echo '*         STAGE 2: Install all development dependencies and tools             *'
+          echo '*******************************************************************************'
+          echo ' '
+        }
+             
         sh 'yarn'
         sh 'npx lerna bootstrap'
       }
     }
-    stage('Build the styles project and the react components project') {
+    stage('3-Build styles and UI Components') {
+      
+        script{
+          echo ' '
+          echo '*******************************************************************************'
+          echo '*      STAGE 3: Build the styles project and REACT components project         *'
+          echo '*******************************************************************************'
+          echo ' '
+        }             
+      
       steps {
         sh 'NODE_ENV=production yarn --cwd=packages/styles build'
         sh 'NODE_ENV=production yarn --cwd=packages/react build'
       }
     }
-    stage('Run unit tests against the react project') {
+    stage('4-Perform Unit Testing') {
+      
+        script{
+          echo ' '
+          echo '***********************************************************************************************'
+          echo '* STAGE 4: Execute traditional and accessibility unit tests against UI component code library *'
+          echo '***********************************************************************************************'
+          echo ' '
+        }
+                   
       steps {
         sh 'yarn --cwd=packages/react test'
       }
     }
-    stage('Test full site using Axe and generate reports') {
+    stage('5-Axe-core integration testing and reporting') {
       steps {
         sh 'yarn dev &'
+        
+        script{
+          echo ' '
+          echo '***********************************************************************************************************'
+          echo '*   STAGE 5: Perform accessibility testing on Demo site using Axe-core rules and generate HTML reports    *'
+          echo '***********************************************************************************************************'
+          echo ' '
+        }
+        
         sh 'wait-for-it.sh --timeout=30 localhost:8000 && yarn test-pa11y-axe'
         sh 'yarn generate-pa11y-axe-report'
 				sh 'yarn print-pa11y-axe-cli-results'
       }
     }
-    stage('Test full site using HTMLCS and generate reports)') {
+    stage('6-HTMLCS integration testing and reporting') {
+        script{
+          echo ' '
+          echo '***********************************************************************************************************'
+          echo '*    STAGE 6: Perform accessibility testing on Demo site using HTMLCS rules and generate HTML reports     *'
+          echo '***********************************************************************************************************'
+          echo ' '
+        }      
+      
       steps {
         sh 'yarn dev &'
         sh 'wait-for-it.sh --timeout=30 localhost:8000 && yarn test-pa11y-htmlcs'
@@ -91,13 +135,29 @@ pipeline {
       }
     }
 
-    stage('Build and package the entire site') {
+    stage('7-{Prepare deployment to Staging') {
+        script{
+          echo ' '
+          echo '***********************************************************************************************************'
+          echo '*     STAGE 7: Build and package entire site and reports in preparation for deployment to staging         *'
+          echo '***********************************************************************************************************'
+          echo ' '
+        }
+     
       steps {
         sh 'yarn build'
       }
     }
 
-    stage('Publish the site and reports to S3') {
+    stage('8-Publish the site and reports to S3') {
+        script{
+          echo ' '
+          echo '***********************************************************************************************************'
+          echo '*              STAGE 8: Push current code and reporting to AWS Staging (Amazon S3 Object                  *'
+          echo '***********************************************************************************************************'
+          echo ' '
+        }
+      
       steps {
         withAWS(credentials:'aws_kci', region: "us-east-1") {
           s3Upload(file:'docs/dist', bucket:'s3.kci-01', acl:'PublicRead')
