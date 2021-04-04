@@ -135,7 +135,8 @@ class App extends Component {
             <MenuBar thin={thin} hasTrigger>
               <TopBarTrigger onClick={this.onTriggerClick}>
                 <button
-                  tabIndex={-1}                    
+                  tabIndex={-1}         
+                  aria-label="Menu"
                   aria-haspopup="true"
                   ref={this.topBarTrigger}
                   aria-expanded={show}
