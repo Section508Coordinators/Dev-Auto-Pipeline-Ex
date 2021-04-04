@@ -89,7 +89,7 @@ const axe = configureAxe({
 		 	'p-as-heading': {enabled: false},
 		 	'page-has-heading-one': {enabled: false},
 		 	'radiogroup': {enabled: false},
-		 	'region': {enabled: false},		 	
+		 	'region': {enabled: true},		 	
 		 	'server-side-image-map': {enabled: false},
 		 	'skip-link': {enabled: false},
 		 	'tabindex': {enabled: false},
