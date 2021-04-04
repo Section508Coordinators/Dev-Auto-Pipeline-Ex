@@ -16,7 +16,7 @@
 		"autocomplete-valid",
 		"avoid-inline-spacing",
 		"blink",
-		"bypass": {enabled: false},
+		"bypass",
 		"checkboxgroup",
 		"duplicate-id-active",
 		"duplicate-id-aria",
