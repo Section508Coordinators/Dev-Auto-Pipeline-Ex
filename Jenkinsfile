@@ -35,11 +35,15 @@ pipeline {
 
     stage('1-Build Filter') {
       steps {
-              sh "bash -c "echo ' '"
-              sh "bash -c "echo '*******************************************************************************'"
-              sh "bash -c "echo '*              STAGE: Build Filter to control branch execution                 *'"
-              sh "bash -c "echo '*******************************************************************************'"
-              sh "bash -c "echo ' '"        
+        
+        script{
+          echo ' '
+          echo '*******************************************************************************'
+          echo '*             STAGE: Build Filter to control branch execution                *'
+          echo '*******************************************************************************'
+          echo ' '
+        }
+        
         script{
           if (BUILD_NUMBER == '1') {
             echo 'Fist Build...'
