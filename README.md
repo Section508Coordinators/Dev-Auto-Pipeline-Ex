@@ -1,12 +1,10 @@
-# Test Automation CI/CD Examples
+# Test Automation CI/CD Pipeline Examples
 
 ![CI/CD Example in AWS and GitHub](cicd-ex2.png)
 
 ## Accessibility-aware automated CI/CD workflows
 
 > UPDATE: 
-
-![Accessibility-aware CI Demo Ex 02](https://github.com/akingkci/Dev-Auto-CICD-EX02/workflows/Accessibility-aware%20CI%20Demo%20Ex%2002/badge.svg)
 
 <hr>
 
@@ -214,4 +212,4 @@ will need to verify that no bugs have been introduced by the changes.
 
 ---
 
-04/16/2021 | 04:57p
+04/16/2021 | 05:15p
