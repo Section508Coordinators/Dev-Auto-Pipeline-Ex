@@ -4,7 +4,7 @@
 
 ## Accessibility-aware automated CI/CD workflows
 
-> UPDATES
+> UPDATES: 04/16/2021
 
 ![Accessibility-aware CI Demo Ex 02](https://github.com/akingkci/Dev-Auto-CICD-EX02/workflows/Accessibility-aware%20CI%20Demo%20Ex%2002/badge.svg)
 
