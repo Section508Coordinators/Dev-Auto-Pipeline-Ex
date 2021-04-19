@@ -42,7 +42,9 @@ Once the example GUI code is built, all examples illustrate the performance of a
 
 # How to use these examples
 
-The examples are meant to be a “quick start” to integrating automated accessibility testing can be achieved by reproducing the examples, as described in this documentation, and then extrapolating those concepts to the individual technology stacks used at the home organizations. However, it is acknowledged that not every organization can accommodate the immediate installation of all of the technology in the examples – especially the three advanced examples in the Dev-Automation repository. There for these examples can be used in 2 different ways – depending on your local organization’s capabilities:
+Benefits from the examples, which are meant to be a “quick start” to integrating automated accessibility testing, can be had by reproducing the examples locally as described in this documentation, and then extrapolating those concepts to the individual technology stacks used at your home organizations. 
+
+It is acknowledged that not every organization can accommodate the immediate installation of all of the technology in the examples. Therefore, these examples can be used in 2 different ways – depending on your local organization’s capabilities:
 
 1. <u>Test environment</u>: You can set up a test environment at your location, with the proper permissions to install all dependencies used in the examples, fork (or otherwise copy) the example to that environment and immediately “experience” the automated accessibility test integration at work in a fully-functioning manner.
 
@@ -52,10 +54,10 @@ The examples are meant to be a “quick start” to integrating automated access
 
 Download the instructions below for implementing the automation example representing the technology in which you have interest:
 
-- Jenkins, CI
-- AWS CodePipeline
-- Microsoft Azure Pipelines
-- GitHub Actions
+- Jenkins, CI - *[pending]*
+- AWS CodePipeline - *[pending]*
+- Microsoft Azure Pipelines - *[pending]*
+- GitHub Actions - *[pending]*
 
 # Package versions
 
@@ -73,4 +75,4 @@ will need to verify that no bugs have been introduced by the changes.
 
 ---
 
-04/19/2021 | 04:23p
+04/19/2021 | 04:58p
