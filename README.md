@@ -51,10 +51,10 @@ The examples are meant to be a “quick start” to integrating automated access
 
 Download the instructions below for implementing the automation example representing the technology in which you have interest:
 
-- Jenkins, CI
-- AWS CodePipeline
-- Microsoft Azure Pipelines
-- GitHub Actions
+- Jenkins, CI *[pending]*
+- AWS CodePipeline *[pending]*
+- Microsoft Azure Pipelines *[pending]*
+- GitHub Actions *[pending]*
 
 # Package versions
 
@@ -72,4 +72,4 @@ will need to verify that no bugs have been introduced by the changes.
 
 ---
 
-04/19/2021 | 04:19p
+04/19/2021 | 04:33p
