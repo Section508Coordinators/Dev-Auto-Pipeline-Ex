@@ -18,8 +18,8 @@ import '@deque/cauldron-react/lib/cauldron.css';
 
 const Foo = () => (
   <Workspace>
-    <h1>Hello world</h1>
-    <Button>Cauldron is awesome!</Button>
+    <h1>Hello world-change 1</h1>
+    <Button>Cauldron is awesome!-change 2</Button>
   </Workspace>
 );
       `}
