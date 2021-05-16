@@ -3,7 +3,7 @@ import { Code } from '@deque/cauldron-react';
 
 const Home = () => (
   <div>
-    <h1>Cauldron React: Demo example site: Code change here</h1>
+    <h1>Cauldron React: Demo example site</h1>
     <h2>Installation</h2>
     <h3></h3>
     <Code>
@@ -18,8 +18,8 @@ import '@deque/cauldron-react/lib/cauldron.css';
 
 const Foo = () => (
   <Workspace>
-    <h1>Hello world-change 1</h1>
-    <Button>Cauldron is awesome!-change 2</Button>
+    <h1>Hello world</h1>
+    <Button>Cauldron is awesome!</Button>
   </Workspace>
 );
       `}
