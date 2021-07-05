@@ -39,7 +39,7 @@ export default class Button extends React.Component<ButtonProps> {
     } = this.props;
     return (
       <button
-        type={'text'}
+        type={'button'}
         className={classNames(className, {
           'Button--primary': variant === 'primary',
           'Button--secondary': variant === 'secondary',
