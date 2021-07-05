@@ -17,7 +17,7 @@ const Alert = ({
   <Dialog
     className={classnames(
       { Alert__warning: variant === 'warning' },
-      'Alert-ABLE!',
+      'Alert',
       className
     )}
     heading={{
