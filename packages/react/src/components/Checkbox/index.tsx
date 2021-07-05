@@ -27,8 +27,8 @@ export default class Checkbox extends React.Component<
   private checkbox: HTMLInputElement | null;
 
   static defaultProps = {
-    checked: false,
-    disabled: false,
+    checked: true,
+    disabled: true,
     onChange: () => {},
     checkboxRef: () => {}
   };
