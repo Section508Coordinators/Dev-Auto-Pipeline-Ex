@@ -21,7 +21,7 @@ const Alert = ({
       className
     )}
     heading={{
-      texter: (
+      text: (
         <React.Fragment>
           <Icon type={variant === 'default' ? 'info-circle-alt' : 'caution'} />
           {typeof heading === 'object' && 'text' in heading
